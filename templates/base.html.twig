@@ -1,12 +1,42 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<!doctype html>
+<!--
+
+ scomN   omNasc      omN           Nasc  N      ascom       ascomN   omNas       omNas
+  scomN   omNasc     comNa        omNascomNa   mNascomNas   NascomNa  omNas       omNas
+   comNa   mNas      comNa       comNa  omNa  omN   omNas  mNas  mNas   Nasc      omN
+   comNas  mNa      scomNa       comNa       com     mNas  mNa    Nas   Nasco    comN
+   comNasc mNa      sco Nas       omNas      com          omNa    Nasc  Nasco    c mN
+   comNasc mNa     ascomNasc         ascom   co           omNa    Nasc  Nascom  sc mN
+   com ascomNa     ascomNasc          scom   co            mNa    Nas   Na comN sc mN
+   com ascomNa    Nasc   asco          comN  co       Na   mNa    Nas   Na comNas  mNa
+   com  scomNa    Nas     sco    comN  comN  com     mNa   mNas  mNas   Nas omNas omNa
+  scomN  comNa  omNasc   ascomN  comNascomN   omNascomNa    NascomNa  omNasc mNa comNas
+  scomN   omNa  omNasc   ascomN  comNascom     mNascom       ascomN    mNasc mN  comNas
+
+
+-->
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>
+        {% block title %}
+            {% block page_title '' %} |
+            {% block site_title 'Nascom' %}
+        {% endblock %}
+    </title>
+
+    {% block stylesheets '' %}
+
+</head>
+
+
+<body>
+{% block body '' %}
+{% block javascripts '' %}
+{% block final_javascripts '' %}
+</body>
 </html>

@@ -1,0 +1,82 @@
+{% extends "base.html.twig" %}
+
+
+
+{% block stylesheets %}
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="{{ asset('img/favicon.png') }}">
+    <link rel="apple-touch-icon" href="{{ asset('img/apple-touch-icon.png') }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('') }}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('') }}">
+
+
+    <!-- Bootstrap CSS File -->
+    <link href="{{ asset('lib/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+
+
+    <!-- Libraries CSS Files -->
+    <link href="{{ asset('lib/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('lib/animate/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('lib/ionicons/css/ionicons.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('lib/lightbox/css/lightbox.min.css') }}" rel="stylesheet">
+
+
+    <!-- Main Stylesheet File -->
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
+
+{% endblock %}
+
+{% block body %}
+
+    <!--preload-->
+    <div class="loader" id="page-loader">
+        <div class="loading-wrapper"></div>
+    </div>
+
+    {% include 'components/_nav_menu.html.twig' %}
+
+    {% block content '' %}
+
+    {% include 'components/_footer.html.twig' %}
+
+    {% if isUserInvited() %}
+        {{ render(controller('App\\Controller\\TechNews\\NewsletterController::newsletter')) }}
+    {% endif %}
+
+{% endblock %}
+
+
+{% block javascripts %}
+    <!-- JavaScript Libraries -->
+    <script src=" {{ asset('lib/jquery/jquery.min.js') }}"></script>
+    <script src=" {{ asset('lib/jquery/jquery-migrate.min.js') }}"></script>
+    <script src=" {{ asset('lib/popper/popper.min.js') }}"></script>
+    <script src=" {{ asset('lib/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src=" {{ asset('lib/easing/easing.min.js') }}"></script>
+    <script src=" {{ asset('lib/counterup/jquery.waypoints.min.js') }}"></script>
+    <script src=" {{ asset('lib/counterup/jquery.counterup.js') }}"></script>
+    <script src=" {{ asset('lib/owlcarousel/owl.carousel.min.js') }}"></script>
+    <script src=" {{ asset('lib/lightbox/js/lightbox.min.js') }}"></script>
+    <script src=" {{ asset('lib/typed/typed.min.js') }}"></script>
+
+    <!-- Contact Form JavaScript File -->
+    <script src=" {{ asset('contactform/contactform.js') }}"></script>
+
+    <!-- Template Main Javascript File -->
+    <script src=" {{ asset('js/main.js') }}"></script>
+
+
+{% endblock %}
+
+{% block final_javascripts %}
+    {% if isUserInvited() %}
+        <script>
+            $(function() {
+                $('#newsletterModal').modal('show');
+            });
+        </script>
+    {% endif %}
+{% endblock %}
+
