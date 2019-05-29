@@ -1,4 +1,7 @@
+
+
+    # config/routes.yaml
 index:
-  path: /
-  defaults: { _controller: 'App\Controller\DefaultController::index' }
-  methods: GET
+    path:       /
+    controller: App\Controller\AdvertController::index
+
