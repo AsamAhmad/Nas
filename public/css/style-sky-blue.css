@@ -148,6 +148,7 @@ a:hover {
 }
 
 .title-a {
+  margin-top: 3rem;
   font-size: 3rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -612,6 +613,7 @@ a:hover {
 }
 
 .intro .overlay-itro {
+
   background-color: rgba(0, 0, 0, 0.6);
   position: absolute;
   top: 0;
