@@ -20,12 +20,22 @@ class AdvertController extends AbstractController
 
 
     /**
-     * @Route("/item", name="item")
+     * @Route("/produit", name="produit")
      */
 
     public function produit ()
     {
         return $this->render('index/produit.html.twig');
+      }
+
+
+    /**
+     * @Route("/contact", name="formcontact")
+     */
+
+    public function contact ()
+    {
+        return $this->render('index/contact.html.twig');
       }
 
 }
