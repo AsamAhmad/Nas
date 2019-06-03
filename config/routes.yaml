@@ -4,4 +4,3 @@
 index:
     path:       /
     controller: App\Controller\AdvertController::index
-
