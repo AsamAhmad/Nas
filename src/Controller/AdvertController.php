@@ -38,4 +38,13 @@ class AdvertController extends AbstractController
         return $this->render('index/contact.html.twig');
       }
 
+    /**
+     * @Route("/hidden", name="cache")
+     */
+
+    public function hidden ()
+    {
+        return $this->render('hidden.html.twig');
+    }
+
 }

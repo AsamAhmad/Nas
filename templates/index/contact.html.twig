@@ -1,67 +1,80 @@
-
 {% extends "layout.html.twig" %}
 
-
 {% block title %}
-
     Nascom | Contact
-
 {% endblock %}
-
 
 {% block content %}
 
-    <div class="container">
-      <div class="row">
-        <div class="col-md-10 mt-10 mx-auto">
+<!--/ Section Contact/-->
 
-
-          <div class="form-comments">
-            <div class="title-box-2">
-              <h3 class="title-left">
-                Leave a Reply
-              </h3>
-            </div>
-            <form class="form-mf">
-              <div class="row">
-                <div class="col-md-6 mb-3">
-                  <div class="form-group">
-                    <input type="text" class="form-control input-mf" id="inputName" placeholder="Name *" required>
-                  </div>
+<section class="bg-image mt-4 backcontact">
+  <div class="container">
+    <div class="row">
+      <div class="mx-auto col-sm-8">
+        <div class="contact-mf">
+          <div id="contact" class="box-shadow-full">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="title-box-2">
+                  <h5 class="title-left">
+                    Nous contacter
+                  </h5>
                 </div>
-                <div class="col-md-6 mb-3">
-                  <div class="form-group">
-                    <input type="email" class="form-control input-mf" id="inputEmail1" placeholder="Email *" required>
-                  </div>
-                </div>
-                <div class="col-md-12 mb-3">
-                  <div class="form-group">
-                    <input type="url" class="form-control input-mf" id="inputUrl" placeholder="Website">
-                  </div>
-                </div>
-                <div class="col-md-12 mb-3">
-                  <div class="form-group">
-                    <textarea id="textMessage" class="form-control input-mf" placeholder="Comment *" name="message"
-                      cols="45" rows="8" required></textarea>
-                  </div>
-                </div>
-                <div class="col-md-12">
-                  <button type="submit" class="button button-a button-big button-rouded">Send Message</button>
+                <div>
+                  <form action="" method="post" role="form" class="contactForm">
+                    <div id="sendmessage">Merci pour votre message !</div>
+                    <div id="errormessage"></div>
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                          <select name="type" id="inputState" class="form-control">
+                            <option selected>Civilité</option>
+                            <option>Mr</option>
+                            <option>Mrs</option>
+                          </select>
+                        </div>
+                      <div class="col-md-12 mb-3">
+                        <div class="form-group">
+                          <input type="text" name="name" class="form-control" id="name" placeholder="Nom" data-rule="minlen:4" data-msg="Minimum 4 caractères" />
+                          <div class="validation"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 mb-3">
+                        <div class="form-group">
+                          <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="Rentrer une email valide" />
+                          <div class="validation"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 mb-3">
+                        <div class="form-group">
+                          <input type="text" class="form-control" name="subject" id="subject" placeholder="Sujet" />
+                          <div class="validation"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 mb-3">
+                        <div class="form-group">
+                          <input type="text" class="form-control" name="societe" id="subject" placeholder="Société" />
+                          <div class="validation"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 mb-3">
+                        <div class="form-group">
+                          <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Message requis" placeholder="Message"></textarea>
+                          <div class="validation"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 text-center">
+                        <button type="submit" class="button button-a button-big button-rouded">Envoyer</button>
+                      </div>
+                    </div>
+                  </form>
                 </div>
               </div>
-            </form>
+            </div>
           </div>
-        </div> 
-
-        </div> 
-        </div> 
-        </div> 
-
-
+        </div>
+      </div>
+    </div>
+  </div>
 
 {% endblock %}
-
-
-
-
-
