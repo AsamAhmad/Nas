@@ -56,11 +56,6 @@ class Membre implements UserInterface
     private $password;
 
     /**
-     * @ORM\Column(type="string", length=64)
-     */
-    private $confirmPassword;
-
-    /**
      * @ORM\Column(type="datetime")
      */
     private $registrationDate;
@@ -150,18 +145,6 @@ class Membre implements UserInterface
     public function setPassword(string $password): self
     {
         $this->password = $password;
-
-        return $this;
-    }
-
-    public function getConfirmPassword(): ?string
-    {
-        return $this->confirmPassword;
-    }
-
-    public function setConfirmPassword(string $confirmPassword): self
-    {
-        $this->confirmPassword = $confirmPassword;
 
         return $this;
     }

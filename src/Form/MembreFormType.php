@@ -6,6 +6,7 @@ namespace App\Form;
 
 use App\Entity\Membre;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
@@ -14,6 +15,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\IsTrue;
 
 class MembreFormType extends AbstractType
 {
@@ -59,23 +61,17 @@ class MembreFormType extends AbstractType
                 'invalid_message' => 'Les deux mots de passe ne concordent pas.',
                 'options' => ['attr' => ['class' => 'password-field']],
                 'required' => true,
-                'first_options'  => ['label' => 'Password'],
-                'second_options' => ['label' => 'Repeat Password'],
+                'first_options'  => ['label' => false, 'attr' => ['placeholder' => "Entrez votre mot de passe"]
+                ],
+                'second_options' => ['label' => false, 'attr' => ['placeholder' => 'Confirmer votre mot de passe']
+                ],
             ])
-            /*->add('password', PasswordType::class, [
-                'required' => true,
-                'label' => false,
-                'attr' => [
-                    'placeholder' => "Entrez votre mot de passe"
-                ]
+            ->add('termsAccepted', CheckboxType:: class, [
+                'mapped' => false,
+                'label' => 'Accepter les conditions générales',
+                'constraints' => new IsTrue(),
             ])
-            ->add('confirm_password', PasswordType::class, [
-                'required' => true,
-                'label' => false,
-                'attr' => [
-                    'placeholder' => "Confirmer le mot de passe"
-                ]
-            ])*/
+            
             ->add('submit', SubmitType::class, [
                 'label' => 'S\'inscrire'
             ]);

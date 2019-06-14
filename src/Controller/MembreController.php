@@ -105,10 +105,10 @@ class MembreController extends AbstractController
                 $encoder->encodePassword($membre, $membre->getPassword())
             );
 
-            # encoder le mot de passe confirme
+            /*# encoder le mot de passe confirme
             $membre->setConfirmPassword(
                 $encoder->encodePassword($membre, $membre->getConfirmPassword())
-            );
+            );*/
 
 
             # savegarde en BDD
@@ -118,7 +118,7 @@ class MembreController extends AbstractController
 
             # notification
             $this->addFlash('notice',
-                'Félicitation, vous avez bien modifié!');
+                'Félicitations, votre compte a bien été modifié!');
 
             # redirection
             return $this->redirectToRoute('membre_profil');
@@ -150,7 +150,7 @@ class MembreController extends AbstractController
         $em->remove($membre);
         $em->flush();
 
-        $this->addFlash('notice', 'Vous avez bien supprimé votre compte!');
+        $this->addFlash('notice', 'Votre compte a bien été supprimé!');
 
         return $this->redirectToRoute('membre_inscription');
 
