@@ -2,7 +2,7 @@
 <!--/ Nav Star /-->
 <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
     <div class="container">
-        <a class="navbar-brand js-scroll" href="#page-top">Nascom</a>
+        <a class="navbar-brand js-scroll" href="{{ path('index') }}">Nascom</a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault"
                 aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span></span>
@@ -25,13 +25,13 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Equipement</a>
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Developpement</a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="{{ path('membre_inscription') }}">Inscription</a>
+                        <a class="dropdown-item" href="{{ path('membre_connexion') }}">Connexion</a>
+                        <a class="dropdown-item" href="{{ path('produit') }}">Fiche Produit </a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
+                        <a class="dropdown-item" href="{{ path('cache') }}">Hidden template fucntions</a>
                     </div>
                 </li>
                 <li class="nav-item">

@@ -110,15 +110,21 @@
               <p class="lead">
                 Résumé (description) : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
               </p>
+              
+              {#% for produit in produits %#}
 
+              {#{ produit.application_diagram | summarize_tabs }#}
               <div class="onglet">
                 <nav class="nav nav-tabs tabsfont">
-                  <a class="nav-item nav-link active lead" href="#p1" data-toggle="tab">APPLICATION DIAGRAM</a>
+                  <a class="nav-item nav-link active lead" href="#p1" data-toggle="tab"> APPLICATION DIAGRAM</a>
                   <a class="nav-item nav-link lead" href="#p2" data-toggle="tab">SPECIFICATION</a>
                   <a class="nav-item nav-link lead" href="#p3" data-toggle="tab">TECHNICAL SPE</a>
                   <a class="nav-item nav-link lead" href="#p4" data-toggle="tab">PROTOCOL</a>
                   <a class="nav-item nav-link lead" href="#p5" data-toggle="tab">SECURITY</a>
                 </nav>
+                {#% endfor %#}
+
+
                 <div class="tab-content">
                   <div class="tab-pane active " id="p1">
                     <p class="lead"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis dolorum dolorem soluta quidem
