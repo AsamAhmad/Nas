@@ -47,4 +47,6 @@ class AdvertController extends AbstractController
         return $this->render('hidden.html.twig');
     }
 
+    
+
 }
