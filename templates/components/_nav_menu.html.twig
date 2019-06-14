@@ -15,7 +15,7 @@
                     <a class="nav-link js-scroll active" href="#home">Accueil</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Routeur</a>
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="{{ path('produit') }}" role="button" aria-haspopup="true" aria-expanded="false">Routeur</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="#">Action</a>
                         <a class="dropdown-item" href="#">Another action</a>
@@ -38,16 +38,7 @@
                     <a class="nav-link js-scroll" href="#about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll" href="#service">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll" href="#work">Work</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll" href="#blog">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link js-scroll" href="{{ asset ('index/contact.html.twig') }}">Contact</a>
+                    <a class="nav-link js-scroll" href="{{ path('formcontact') }}">Contact</a>
                 </li>
             </ul>
         </div>
