@@ -96,16 +96,6 @@ class MembreController extends AbstractController
         # création du Formulaire "MembreFormType"
         $form = $this->createForm(ModificationFormType::class, $membre);
         $form->handleRequest($request);
-        #$membre->get['adresse_livraison'][0]->setData($form['adresse']);
-
-        if($request->getMethod() == 'POST') {
-
-            $adresse = $form['adresse']->getData();
-            $cp = $form['cp']->getData();
-            $ville = $form['ville']->getData();
-            $membre->setAdresselivraison([$adresse, $cp, $ville]);
-            $membre->setAdresseFacturation([$adresse, $cp, $ville]);
-        }
 
         # vérification de la soumission du formulaire
         if ($form->isSubmitted() && $form->isValid()) {
@@ -115,6 +105,12 @@ class MembreController extends AbstractController
                 $encoder->encodePassword($membre, $membre->getPassword())
             );
 
+            /*# encoder le mot de passe confirme
+            $membre->setConfirmPassword(
+                $encoder->encodePassword($membre, $membre->getConfirmPassword())
+            );*/
+
+
             # savegarde en BDD
             $em = $this->getDoctrine()->getManager();
             $em->persist($membre);
@@ -122,7 +118,7 @@ class MembreController extends AbstractController
 
             # notification
             $this->addFlash('notice',
-                'Félicitation, vous avez bien modifié!');
+                'Félicitations, votre compte a bien été modifié!');
 
             # redirection
             return $this->redirectToRoute('membre_profil');
@@ -154,7 +150,7 @@ class MembreController extends AbstractController
         $em->remove($membre);
         $em->flush();
 
-        $this->addFlash('notice', 'Vous avez bien supprimé votre compte!');
+        $this->addFlash('notice', 'Votre compte a bien été supprimé!');
 
         return $this->redirectToRoute('membre_inscription');
 

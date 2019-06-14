@@ -7,29 +7,14 @@
 <section class="bg-image mt-4 backcontact">
   <div class="container">
     <div class="row">
-      <div class="mx-auto col-sm-8">
-        <div class="contact-mf">
-          <div id="contact" class="box-shadow-full">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="title-box-2">
-                  <h5 class="title-left text-center">
-                    Inscription
-                  </h5>
-                </div>
-                
-                <div class="container">
-                <div class="row">
-                <div class="mx-auto col-md-12">
-                    {% form_theme form 'bootstrap_3_layout.html.twig' %}
-                <div class="col-sm-3">
-                    {{ form_row(form.title) }}
-                </div>
-                {{ form(form) }}           
-                </div>
-                </div>
-                </div>
-              </div>
+        {% form_theme form 'bootstrap_3_layout.html.twig' %}
+        <!--<div class="col-xs-6 col-xs-push-3">-->
+        <div class="col-md-8 mx-auto">
+            <h2 class="text-center">Inscription </h2>
+            {{ form( form, { attr: { novalidate: 'novalidate' } } ) }}
+
+            <div class="col-md-3">
+                {{ form_row(form.title) }}
             </div>
           </div>
         </div>

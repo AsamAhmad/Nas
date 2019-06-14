@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20190614085255 extends AbstractMigration
+final class Version20190614134124 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -22,8 +22,7 @@ final class Version20190614085255 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE membre CHANGE last_connexion last_connexion DATETIME DEFAULT NULL');
-        $this->addSql('CREATE UNIQUE INDEX UNIQ_F6B4FB29E7927C74 ON membre (email)');
+        $this->addSql('ALTER TABLE membre DROP confirm_password');
     }
 
     public function down(Schema $schema) : void
@@ -31,7 +30,6 @@ final class Version20190614085255 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('DROP INDEX UNIQ_F6B4FB29E7927C74 ON membre');
-        $this->addSql('ALTER TABLE membre CHANGE last_connexion last_connexion DATETIME NOT NULL');
+        $this->addSql('ALTER TABLE membre ADD confirm_password VARCHAR(64) NOT NULL COLLATE utf8mb4_unicode_ci');
     }
 }

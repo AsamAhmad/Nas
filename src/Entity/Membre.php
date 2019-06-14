@@ -19,12 +19,12 @@ class Membre implements UserInterface
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=20)
      */
     private $title;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=50)
      * @Assert\NotBlank(message="Vous devez saisir votre nom")
      * @Assert\Length(
      *     max="255",
@@ -33,7 +33,7 @@ class Membre implements UserInterface
     private $firstname;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=50)
      * @Assert\NotBlank(message="Vous devez saisir votre prenom")
      * @Assert\Length(
      *     max="255",
@@ -42,7 +42,7 @@ class Membre implements UserInterface
     private $lastname;
 
     /**
-     * @ORM\Column(type="string", length=255, unique=true)
+     * @ORM\Column(type="string", length=80, unique=true)
      * @Assert\Email(
      *     message = "L'émail '{{ value }}' n'est pas valide.",
      *     checkMX = true
@@ -56,17 +56,12 @@ class Membre implements UserInterface
     private $password;
 
     /**
-     * @ORM\Column(type="string", length=64)
-     */
-    private $confirmPassword;
-
-    /**
      * @ORM\Column(type="datetime")
      */
     private $registrationDate;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=100, nullable=true)
      */
     private $company;
 
@@ -150,18 +145,6 @@ class Membre implements UserInterface
     public function setPassword(string $password): self
     {
         $this->password = $password;
-
-        return $this;
-    }
-
-    public function getConfirmPassword(): ?string
-    {
-        return $this->confirmPassword;
-    }
-
-    public function setConfirmPassword(string $confirmPassword): self
-    {
-        $this->confirmPassword = $confirmPassword;
 
         return $this;
     }
