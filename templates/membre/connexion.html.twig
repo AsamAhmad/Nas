@@ -1,14 +1,11 @@
 {% extends "layout.html.twig" %}
-{% block title %}
-    {# Connexion #}
-{% endblock %}
-
+{% set active = 'connexion' %}
+{% block page_title %} Connexion {% endblock %}
 {% block content %}
 
-
     <div class="container sect-mt4">
-        <div class="row">
-            <div class="mx-auto col-md-8">
+    <div class="row sect-mt4">
+        <div class="mx-auto col-md-8 mt-4">
 
                 {% for message in app.flashes('notice') %}
                     <div class="alert alert-info">
@@ -23,14 +20,13 @@
                     </div>
                 {% endif %}
 
-                {% form_theme form 'bootstrap_3_layout.html.twig' %}
-                <h3> Connexion</h3>
+            <h2 class="text-center"> Connexion </h2>
+
+            {% form_theme form 'bootstrap_3_layout.html.twig' %}
+            <div class="mx-auto col-md-8 mt-4">
                 {{ form( form, { attr: { novalidate: 'novalidate' } } ) }}
-
             </div>
-
-
         </div>
-
+    </div>
     </div>
 {% endblock %}
