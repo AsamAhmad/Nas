@@ -22,9 +22,9 @@ class MembreFormType extends AbstractType
             ->add('title', ChoiceType::class, [
                 'choices'  => [
                     'Civilite'=> null,
-                    'Melle' => null,
-                    'Mme' => null,
-                    'Mr' => null,
+                    'Melle' => 'Melle',
+                    'Mme' => 'Mme',
+                    'Mr' => 'Mr',
                 ],
             ])
             ->add('lastname', TextType::class, [
@@ -40,6 +40,7 @@ class MembreFormType extends AbstractType
                 ]
             ])
             ->add('company', TextType::class, [
+                'required' => false,
                 'label' => false,
                 'attr' => [
                     'placeholder' => "Votre societe"

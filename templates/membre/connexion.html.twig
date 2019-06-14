@@ -1,3 +1,4 @@
+{% extends "layout.html.twig" %}
 {% block title %}
     {# Connexion #}
 {% endblock %}
@@ -7,7 +8,7 @@
 
     <div class="container sect-mt4">
         <div class="row">
-            <div class="col-md-8 mx-auto">
+            <div class="mx-auto col-md-8">
 
                 {% for message in app.flashes('notice') %}
                     <div class="alert alert-info">
@@ -22,11 +23,12 @@
                     </div>
                 {% endif %}
 
-
+                {% form_theme form 'bootstrap_3_layout.html.twig' %}
                 <h3> Connexion</h3>
                 {{ form( form, { attr: { novalidate: 'novalidate' } } ) }}
-                {% form_theme form 'bootstrap_3_layout.html.twig' %}
+
             </div>
+
 
         </div>
 

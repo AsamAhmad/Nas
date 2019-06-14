@@ -96,16 +96,6 @@ class MembreController extends AbstractController
         # création du Formulaire "MembreFormType"
         $form = $this->createForm(ModificationFormType::class, $membre);
         $form->handleRequest($request);
-        #$membre->get['adresse_livraison'][0]->setData($form['adresse']);
-
-        if($request->getMethod() == 'POST') {
-
-            $adresse = $form['adresse']->getData();
-            $cp = $form['cp']->getData();
-            $ville = $form['ville']->getData();
-            $membre->setAdresselivraison([$adresse, $cp, $ville]);
-            $membre->setAdresseFacturation([$adresse, $cp, $ville]);
-        }
 
         # vérification de la soumission du formulaire
         if ($form->isSubmitted() && $form->isValid()) {
@@ -114,6 +104,12 @@ class MembreController extends AbstractController
             $membre->setPassword(
                 $encoder->encodePassword($membre, $membre->getPassword())
             );
+
+            # encoder le mot de passe confirme
+            $membre->setConfirmPassword(
+                $encoder->encodePassword($membre, $membre->getConfirmPassword())
+            );
+
 
             # savegarde en BDD
             $em = $this->getDoctrine()->getManager();
