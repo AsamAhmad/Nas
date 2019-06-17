@@ -47,6 +47,17 @@ class AdvertController extends AbstractController
         return $this->render('hidden.html.twig');
     }
 
+
+
+    /**
+     * @Route("/cg", name="cg")
+     */
+
+    public function cg ()
+    {
+        return $this->render('components/cg.html.twig');
+    }
+
     
 
 }

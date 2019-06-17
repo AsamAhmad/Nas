@@ -52,7 +52,7 @@ class MembreFormType extends AbstractType
             ->add('email', EmailType::class, [
                 'label' => false,
                 'attr' => [
-                    'placeholder' => "Entrez votre émail"
+                    'placeholder' => "Entrez votre Email"
                 ]
             ])
 

@@ -38,10 +38,14 @@
 {
     width: 100%;
     height: 40px;
-
 }
 
 .tabsfont
 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
+  .overlay-mf.inscription{
+      background-image: url("/img/relation-multi-canal.webp")
+    /*background-color: #1c4561;*/
+  }
