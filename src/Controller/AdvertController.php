@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Article;
+use App\Entity\Produit;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -47,8 +49,6 @@ class AdvertController extends AbstractController
         return $this->render('hidden.html.twig');
     }
 
-
-
     /**
      * @Route("/cg", name="cg")
      */
@@ -58,6 +58,30 @@ class AdvertController extends AbstractController
         return $this->render('components/cg.html.twig');
     }
 
-    
+
+    /*
+   * Génération de la sidebar
+   * */
+    public function sidebar()
+    {
+        $repository = $this->getDoctrine()
+            ->getRepository(Produit::class);
+
+        # Récuperation des 5 derniers produits
+        $produits = $repository-> findByLatest();
+
+        # Récuperation des produits en position speciale
+        $special = $repository->findBySpecial();
+
+        # Récuperation des produits en promotion
+        $promotion = $repository->findByPromotion();
+
+        #Transmission des informations à la vue
+        return $this->render('components/_sidebar.html.twig', [
+            'produits' => $produits,
+            'special' => $special,
+            'promotion' => $promotion
+        ]);
+    }
 
 }

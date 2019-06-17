@@ -19,6 +19,68 @@ class ProduitRepository extends ServiceEntityRepository
         parent::__construct($registry, Produit::class);
     }
 
+    /**
+     *Récuperer les produits du spotLight
+     * Uniquement les 5 derniers
+     * Trier par ordre décroissant
+     */
+    public function findBySpotlight()
+    {
+        return $this->createQueryBuilder('a')
+            ->where('a.spotlight = 1')
+            ->orderBy('a.id', 'DESC')
+            ->setMaxResults(5)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    /**
+     *Récuperer les produits à la position speciale
+     * Uniquement les 5 derniers
+     * Trier par ordre décroissant
+     */
+    public function findBySpecial()
+    {
+        return $this->createQueryBuilder('a')
+            ->where('a.special = 1')
+            ->orderBy('a.id', 'DESC')
+            ->setMaxResults(5)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    /**
+     *Récuperer les 5 derniers produits insérés en bd
+     */
+    public function findByLatest()
+    {
+        return $this->createQueryBuilder('a')
+            ->orderBy('a.id', 'DESC')
+            ->setMaxResults(5)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    /**
+     * Recuperer les articles du spotlight
+     * Uniquement les 5 derniers
+     * Trier par ordre decroissant
+     */
+
+    public function findByPromotion()
+    {
+        return $this->createQueryBuilder('a')
+            ->where('a.promotion = 1')
+            ->orderBy('a.id', 'DESC')
+            ->setMaxResults(6)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
     // /**
     //  * @return Produit[] Returns an array of Produit objects
     //  */

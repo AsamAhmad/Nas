@@ -47,7 +47,21 @@ class AppExtension extends AbstractExtension
                 }
                 return $string . '...';
 
+            }, array( 'is_safe' => array( 'html' ) ) ),
+
+            new TwigFilter('summarize_tabs', function( $contenu ) {
+
+                // Suppression des balises HTML
+                $string = strip_tags($contenu);
+                // Si mon $string est supérieur à 3, je continue
+                if (strlen($string) > 3) {
+                    // Je coupe ma chaine à 3 caractères
+                    $stringCut = substr($string, 0, 3);
+                }
+                return $string . '...';
+
             }, array( 'is_safe' => array( 'html' ) ) )
+
         ];
     }
 
