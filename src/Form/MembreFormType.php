@@ -33,7 +33,7 @@ class MembreFormType extends AbstractType
             ->add('lastname', TextType::class, [
                 'label' => false,
                 'attr' => [
-                    'placeholder' => "Prenom"
+                    'placeholder' => "Prénom"
                 ]
             ])
             ->add('firstname', TextType::class, [
@@ -46,7 +46,7 @@ class MembreFormType extends AbstractType
                 'required' => false,
                 'label' => false,
                 'attr' => [
-                    'placeholder' => "Votre societe"
+                    'placeholder' => "Votre société"
                 ]
             ])
             ->add('email', EmailType::class, [
