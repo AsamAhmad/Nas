@@ -7,6 +7,8 @@ use App\Entity\Produit;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use App\Entity\Produit;
+use App\Entity\Image;
 
 
 class AdvertController extends AbstractController
@@ -21,14 +23,43 @@ class AdvertController extends AbstractController
       }
 
 
-   /**
+    /**
+     * @Route("/categorie", name="categorie")
+     */
+
+    public function categorie ()
+    {
+
+      $produit = $this->getDoctrine()
+            ->getRepository(Produit::class)
+            ->find(1);
+
+        return $this->render("index/categorie.html.twig", [
+          "produit" => $produit
+      ]);
+      }
+
+
+    /**
      * @Route("/produit", name="produit")
      */
-      /*   public function produit ()
-      {
-        return $this->render('index/produit.html.twig');
-      }*/
 
+    public function produit ()
+    {
+      
+      $produit = $this->getDoctrine()
+            ->getRepository(Produit::class)
+            ->find(1);
+
+      // $repository= $this->getDoctrine()
+       //->getRepository(Image::class)();
+
+       // $images = $repository -> getImages();
+        
+        return $this->render("index/produit.html.twig",[
+          "produit" => $produit
+      ]);
+      }
 
     /**
      * @Route("/contact", name="formcontact")

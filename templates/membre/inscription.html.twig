@@ -3,12 +3,46 @@
 {% block page_title %} Inscription {% endblock %}
 {% block content %}
 
+<section class="bg-image mt-2 backinscription">
+  <div class="container">
+    <div class="row">
+      <div class="mx-auto col-md-10">
+        <div class="contact-mf">
+          <div id="contact" class="box-shadow-full inscription">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="title-box-2">
+                  <h5 class="title-left text-center">
+                    Inscription
+                  </h5>
+                </div>
+                
+                <div class="mx-auto col-md-8">
+                <div class="col-md-12">
+                {% form_theme form 'bootstrap_3_layout.html.twig' %}
+                {{ form( form, { attr: { novalidate: 'novalidate' } } ) }}
+                <div class"col-md-8">
+                {{ form_row(form.title) }}
+                </div>
+                {{ form(form) }}
+                <div class="g-recaptcha" data-sitekey="6Ld4OqkUAAAAAHNxI6zDp8EIh8v5ayVJ3sZKw1j4"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<section class="sect-mt4 bg-image backcontact">
+<!-- 
+
+
+
+<section class="bg-image backcontact">
   <div class="container">
     <div class="row">
         {% form_theme form 'bootstrap_3_layout.html.twig' %}
-        <!--<div class="col-xs-6 col-xs-push-3">-->
         <div class="col-md-8 mx-auto">
             <h2 class="text-center">Inscription </h2>
             {{ form( form, { attr: { novalidate: 'novalidate' } } ) }}
@@ -24,7 +58,7 @@
 
 
 
-
+-->
 
 <!-- 
 
