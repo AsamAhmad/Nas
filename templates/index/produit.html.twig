@@ -74,10 +74,10 @@
 
 
     </div>
-            {% for product in produit %}
+            {#{% for product in produit %}#}
 
             <div class="post-meta">
-              <h1 class="article-title">{{ product.name }}</h1>
+              <h1 class="article-title">{{ produit.name }}</h1>
               <ul>
                 <li>
                   <span class="ion-ios-person"></span>
@@ -85,47 +85,50 @@
                 </li>
                 <li>
                   <span class="ion-pricetag"></span>
-                  <a href="#">Référence : {{ product.reference }} </a>
+                  <a href="#">Référence : {{ produit.reference }} </a>
                 </li>
                 <li>
                   <span class="ion-chatbox"></span>
-                  <a href="#">Marque : {{ product.marque }}</a>
+                  <a href="#">Marque : {{ produit.marque }}</a>
                 </li>
                 <li>
                   <span class="ion-chatbox"></span>
-                  <a href="#">Etat : {{ product.etat }}</a>
+                  <a href="#">Etat : {{ produit.etat }}</a>
                 </li>
               </ul>
             </div>
             <div class="article-content">
               <p class="lead">
-                {{ product.description | summarize }}
+                {{ produit.description | summarize }}
               </p>
 
+
+
+              {{ produit.application_diagram | summarize_tabs }}
               <div class="onglet">
                 <nav class="nav nav-tabs tabsfont">
-                  <a class="nav-item nav-link active lead" href="#p1" data-toggle="tab"> {{ product.application_diagram | summarize_tabs }} </a>
-                  <a class="nav-item nav-link lead" href="#p2" data-toggle="tab"> {{ product.specification | summarize_tabs }} </a>
-                  <a class="nav-item nav-link lead" href="#p3" data-toggle="tab"> {{ product.technical_spe | summarize_tabs }} </a>
-                  <a class="nav-item nav-link lead" href="#p4" data-toggle="tab"> {{ product.protocol | summarize_tabs }} </a>
-                  <a class="nav-item nav-link lead" href="#p5" data-toggle="tab">{{ product.security | summarize_tabs }}</a>
+                  <a class="nav-item nav-link active lead" href="#p1" data-toggle="tab"> {{ produit.application_diagram | summarize_tabs }} </a>
+                  <a class="nav-item nav-link lead" href="#p2" data-toggle="tab"> {{ produit.specification | summarize_tabs }} </a>
+                  <a class="nav-item nav-link lead" href="#p3" data-toggle="tab"> {{ produit.technical_spe | summarize_tabs }} </a>
+                  <a class="nav-item nav-link lead" href="#p4" data-toggle="tab"> {{ produit.protocol | summarize_tabs }} </a>
+                  <a class="nav-item nav-link lead" href="#p5" data-toggle="tab">{{ produit.security | summarize_tabs }}</a>
                 </nav>
 
 
 
                 <div class="tab-content">
                   <div class="tab-pane active " id="p1">
-                    <p class="lead">{{ product.description | summarize }} </p>
+                    <p class="lead">{{ produit.description | summarize }} </p>
                   </div>
                   <div class="tab-pane " id="p2">
-                    <p class="lead">{{ product.description | summarize }} </p>
-                    <p class="lead"> {{ product.description | summarize }} </p>
-                    <p class="lead"> {{ product.description | summarize }} </p>
-                    <p class="lead"> {{ product.description | summarize }} </p>
+                    <p class="lead">{{ produit.description | summarize }} </p>
+                    <p class="lead"> {{ produit.description | summarize }} </p>
+                    <p class="lead"> {{ produit.description | summarize }} </p>
+                    <p class="lead"> {{ produit.description | summarize }} </p>
                   </div>
                 </div>
               </div>
-              {% endfor %}
+              {#{% endfor %}#}
 <!--
               <blockquote class="blockquote">
                 <p class="mb-0 lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>

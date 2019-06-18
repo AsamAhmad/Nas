@@ -27,7 +27,7 @@ class ProduitController extends AbstractController
          * -----------------------------------------------------------------------------
          * On recupere le parametre slug de la route (url) dans notre variable $slug
          */
-        $categorie = $this->getDoctrine()
+       $categorie = $this->getDoctrine()
             ->getRepository(Categorie::class)
             ->findOneBy(['slug' => $slug]);
         /*
@@ -35,13 +35,16 @@ class ProduitController extends AbstractController
          * recuperer les produits d'une categorie
          */
 
-        $produits = $categorie->getProduit();
+        //dump($categorie);
+        //die();
+
+        $produits = $categorie-> getProduits();
 
 
         /*
          * J'envoi a ma vue les donnees a afficher.
          */
-        return $this->render("default/categorie.html.twig", [
+        return $this->render("index/categorie.html.twig", [
             'produits' => $produits,
             'categorie' => $categorie
         ]);
@@ -50,17 +53,33 @@ class ProduitController extends AbstractController
     /**
      * @Route("/{categorie}/{slug}_{id<\d+>}.html" ,name="default_produit")
      */
-    public function produit ($id)
+   /* public function produit ($id)
     {
         /*
          * Recuperation du produit correspondent a l'id en parametre de notre route
          */
+        /*$produit = $this->getDoctrine()
+                        ->getRepository(Produit::class)
+                        ->find($id);
+
+        return $this->render("index/produit.html.twig", [
+            'produit' => $produit
+        ]);
+    }*/
+
+    /**
+     * @Route("/{categorie}/{slug}_{id<\d+>}.html", name="default_produit")
+     */
+    public function produit ($id)
+    {
         $produit = $this->getDoctrine()
             ->getRepository(Produit::class)
             ->find($id);
 
-        return $this->render("default/produit.html.twig", [
+        return $this->render("index/produit.html.twig", [
             'produit' => $produit
         ]);
     }
+
+
 }

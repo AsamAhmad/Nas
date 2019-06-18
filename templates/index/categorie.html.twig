@@ -1,0 +1,111 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}
+    {{ categorie.name }}
+{% endblock %}
+
+{% block content %}
+
+    {#{{ dump(app.request) }}#}
+
+<div class="row">
+    <!--colleft-->
+    <div class="col-md-8 col-sm-12">
+        {% if  produits is not empty %}
+        <div class="box-caption">
+            <span>{{ categorie.name }}</span>
+            {#ou bien faire {{ articles[0].categorie.nom }})#}
+            {#<span>{{ app.request.get('slug') }}</span>#}
+        </div>
+
+        <!--list-news-cate-->
+        <div class="list-news-cate">
+
+            {% for  produit in produits %}
+                <article class="news-cate-item">
+                    <div class="row">
+
+                        <div class="col-md-5 col-sm-5 col-xs-12">
+                            <a href="{{ path('default_produit',
+                                { 'categorie' : 'produit.categorie.slug',
+                                    'slug': produit.slug,
+                                    'id': produit.id
+                                }) }}">
+                                <img alt="" src="">
+                            </a>
+                        </div>
+                        <div class="col-md-7 col-sm-7 col-xs-12">
+                            <h3><a href="{{ path('default_produit',
+                                    { 'categorie' : 'produit.categorie.slug',
+                                        'slug': produit.slug,
+                                        'id': produit.id
+                                    }) }}">
+
+                                    {{ produit.name}}</a></h3>
+
+                            <div class="meta-post">
+                                <a href="#">
+                                    {#{{ article.membre.prenom }}  {{ article.membre.nom }}#}
+                                </a>
+                                <em></em>
+                                <span>
+                                    {#{{ article.dateCreation | date('d/m/Y') }}#} <!-- | date est un filtre qui permet de donner un format à la date sinon ça ne marche pas-->
+                                </span>
+                            </div>
+                            {{ produit.description | summarize}} <!-- | raw est un filtre qui permet de supprimmer les balises <p> qui s'affichent dans le contenu-->
+                        </div>
+                    </div>
+                </article>
+            {% endfor %}
+
+        </div>
+
+        {% else %}
+            <div class="alert alert-info" >
+                Aucune publication  pour le moment
+            </div>
+        {% endif %}
+        <!--list-news-cate
+            <div class="box-caption">
+                <span>Tech</span>
+            </div>
+            <div class="list-news-cate">
+                <article class="news-cate-item">
+                    <div class="row">
+                        <div class="col-md-5 col-sm-5 col-xs-12">
+                            <a href="#">
+                                <img alt="" src="{{ asset('images/product/4.jpg')}}">
+                            </a>
+                        </div>
+                        <div class="col-md-7 col-sm-7 col-xs-12">
+                            <h3><a href="#">Tip Aligning Digital Marketing with Business Goals and Objectives</a></h3>
+                            <div class="meta-post">
+                                <a href="#">
+                                    Saadatou ALI DANKINTAFO
+                                </a>
+                                <em></em>
+                                <span>
+                                        2017-02-26 09:37:18
+                                </span>
+                            </div>
+                            Nulla quis lorem ut libero malesuada feugiat. Cras ultricies ligula sed magna dictum porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere...
+                        </div>
+                    </div>
+                </article>
+            </div>-->
+
+        <!--<div class="paging">
+            <a href="#">Prev</a>
+            <a href="#" class="current">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">Next</a>
+        </div>-->
+
+    </div>
+ {% include 'components/_sidebar.html.twig' %}
+{# {{ render(controller('App\\Controller\\DefaultController::sidebar')) }}#}
+</div>
+{% endblock %}

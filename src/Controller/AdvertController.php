@@ -21,14 +21,13 @@ class AdvertController extends AbstractController
       }
 
 
-    /**
+   /**
      * @Route("/produit", name="produit")
      */
-
-    public function produit ()
-    {
+      /*   public function produit ()
+      {
         return $this->render('index/produit.html.twig');
-      }
+      }*/
 
 
     /**
