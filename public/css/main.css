@@ -1,6 +1,5 @@
-.backcontact{
-    background-image: url("/img/relation-multi-canal.webp");
-}
+
+/*------/ INDEX /------*/
 
 .backindex
 {
@@ -10,7 +9,6 @@
 .testimonialsback
 {
     background-image: url("/img/CoverNASCOMCompany.webp");
-
 }
 
 .testimonialsback .overlay-mf {
@@ -24,6 +22,14 @@
     opacity: .4;
 }
 
+.partenaires
+{
+    width: 100%;
+    height: 40px;
+}
+
+/*------/ Footer /------*/
+
 .footerbacksecurity
 {
     background-color: #48abec;
@@ -34,18 +40,88 @@
     opacity: .4;
 }
 
-.partenaires
-{
-    width: 100%;
-    height: 40px;
-}
+/*------/ Produits /------*/
 
 .tabsfont
 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-  .overlay-mf.inscription{
-      background-image: url("/img/relation-multi-canal.webp")
-    /*background-color: #1c4561;*/
-  }
+/*------/ Inscription /------*/
+
+.backinscription{
+    background-image: url("/img/inscription05.jpg");
+}
+
+.box-shadow-full.inscription
+{
+    padding: 3rem 1.25rem;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.879);
+    margin-bottom: 3rem;
+    z-index: 2;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);  
+}
+
+/*------/ Connexion /------*/
+
+.backconnexion{
+    background-image: url("/img/inscription01.jpg");
+}
+
+.box-shadow-full.connexion
+{
+    padding: 3rem 1.25rem;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.879);
+    margin-bottom: 3rem;
+    z-index: 2;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);  
+}
+
+
+/*------/ Buttom Connexion Inscription Icon /------*/
+
+.fa.fa-user.icon{
+font-size: 36px;
+color: #48abec;
+}
+
+.fa.fa-user.icon:hover{
+    font-size: 36px;
+    color: white;
+}
+
+.btn.btn-primary.connexion{
+    background-color: #48abec;
+    border-color: #48abec;
+    color: white;
+}
+
+.btn.btn-primary.connexion:hover{
+    background-color: #1380c9;
+    border-color: #1380c9;
+    color: white;
+}
+
+.btn.btn-primary.deconnexion{
+    background-color: #48abec;
+    border-color: #48abec;
+    color: white;
+}
+.btn.btn-primary.deconnexion:hover{
+    background-color: #1380c9;
+    border-color: #1380c9;
+    color: white;
+}
+
+.btn.btn-primary.inscrire{
+    background-color: #48abec;
+    border-color: #48abec;
+    color: white;
+}
+.btn.btn-primary.inscrire:hover{
+    background-color: #1380c9;
+    border-color: #1380c9;
+    color: white;
+}

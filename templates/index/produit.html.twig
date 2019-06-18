@@ -26,8 +26,7 @@
     <div class="intro-content display-table">
       <div class="table-cell">
         <div class="container">
-          <h2 class="intro-title mb-4">NOM DU PRODUIT</h2>
-
+          <h2 class="intro-title mb-4"> {{ produit.categorie.name }} </h2>
 
 <!--
           <ol class="breadcrumb d-flex justify-content-center">
@@ -62,7 +61,7 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img class="d-block w-100" src="img/post-2.jpg" alt="First slide">
+          <img class="d-block w-100" src="{#{ produit.image.id }#}" alt="First slide">
         </div>
         <div class="carousel-item">
           <img class="d-block w-100" src="img/post-3.jpg" alt="Second slide">
@@ -81,16 +80,13 @@
       </a>
     </div>
 
-
     </div>
-
-
             <div class="post-meta">
               <h1 class="article-title">Titre du produit</h1>
               <ul>
                 <li>
                   <span class="ion-ios-person"></span>
-                  <a href="#">Date de publication</a>
+                  <a href="#">{{ produit.date | date('d/m/Y') }}</a>
                 </li>
                 <li>
                   <span class="ion-pricetag"></span>
@@ -116,7 +112,7 @@
               {#{ produit.application_diagram | summarize_tabs }#}
               <div class="onglet">
                 <nav class="nav nav-tabs tabsfont">
-                  <a class="nav-item nav-link active lead" href="#p1" data-toggle="tab"> APPLICATION DIAGRAM</a>
+                  <a class="nav-item nav-link active lead" href="#p1" data-toggle="tab"> {{ produit.applicationDiagram | summarize}}</a>
                   <a class="nav-item nav-link lead" href="#p2" data-toggle="tab">SPECIFICATION</a>
                   <a class="nav-item nav-link lead" href="#p3" data-toggle="tab">TECHNICAL SPE</a>
                   <a class="nav-item nav-link lead" href="#p4" data-toggle="tab">PROTOCOL</a>

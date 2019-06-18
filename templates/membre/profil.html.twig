@@ -1,15 +1,15 @@
 {% extends "layout.html.twig" %}
-
-{% block title %}
-    Mon Profil
+{% set active = 'profil' %}
+{% block page_title %} Mon Prodil 
 {% endblock %}
-
 {% block content %}
 
-    <div class="container profil">
-        <div class="row">
-
-            <h2>Mon Profil</h2>
+  <div class="intro intro-single bg-image">
+    <div class="overlay-mf"></div>
+    <div class="intro-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <h2 class="intro-title mb-4">Mon profil</h2>
 
             {% for message in app.flashes('notice') %}
                 <div class="alert alert-success">
@@ -17,12 +17,38 @@
                 </div>
             {% endfor %}
 
-            <div class="col-md-12 text-center profil-details">
-                <img src="{{ asset('img/default-profile.png') }}" alt="profile">
-                <p>{{ app.user.firstname }} {{ app.user.lastname }}</p>
-                <p>{{ app.user.email }}</p>
+          <ol class="breadcrumb d-flex justify-content-center">
+           <li class="mb-0 lead breadcrumb-item active"> <a class="mb-0 lead" href="{{ path('membre_modification') }}">Modifier mon profil</a></li>
+           <li class="mb-0 lead breadcrumb-item active"> <a class="mb-0 lead" href="{{ path('membre_suppression', {'id':app.user.id}) }}">Supprimer mon compte</a></li>    
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!--/ Section Blog-Single Star /-->
+  <section class="blog-wrapper sect-pt4" id="blog">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="post-box">
+
+            <div class="article-content">
+              <p>
+              <strong class="display-6"> Mes informations </strong>
+              </p>
+              <p class="lead">{{ app.user.firstname }} {{ app.user.lastname }}</p>
+              <p class="lead">{{ app.user.email }}</p>
+
+              <blockquote class="blockquote">
+              <a class="mb-0 lead" href="www.nascom.fr">Merci de nous avoir fait confiance</a>
+              </blockquote>
+            
             </div>
+            </div>
+            </div>
+
+
 
             <div class="text-center">
                 <a class="btn btn-modifier btn-primary" href="{{ path('membre_modification') }}">Modifier mon profil</a>

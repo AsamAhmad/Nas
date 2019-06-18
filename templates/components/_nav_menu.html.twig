@@ -46,19 +46,19 @@
                 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
 
                     <li class="nav-item">
-                        <a href="{{ path('membre_profil') }}"><i class="fa fa-user"></i></a>
+                        <a href="{{ path('membre_profil') }}"><i class="fa fa-user icon"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ path('membre_deconnexion') }}" class="btn btn-primary" role="button">Déconnexion</a>
+                        <a href="{{ path('membre_deconnexion') }}" class="btn btn-primary deconnexion" role="button">Déconnexion</a>
                     </li>
 
                 {% else %}
 
                     <li class="nav-item">
-                        <a href="{{ path('membre_connexion') }}" class="btn btn-primary" role="button">Connexion</a>
+                        <a href="{{ path('membre_connexion') }}" class="btn btn-primary connexion" role="button">Connexion</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ path('membre_inscription') }}" class="btn btn-primary" role="button">S'inscrire</a>
+                        <a href="{{ path('membre_inscription') }}" class="btn btn-primary inscrire" role="button">S'inscrire</a>
                     </li>
 
 
