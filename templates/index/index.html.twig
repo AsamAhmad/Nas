@@ -319,7 +319,7 @@
 
 
 <!--/ Partenaire Start /-->
-<section id="partenaire" class="blog-mf sect-pt4 route">
+<section id="partenaire" class="blog-mf sect-pt4 route ">
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -334,25 +334,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-2">
-                <div class="partenaires">
-                    <img src="{{ asset('img/JE_logo.png') }}" alt="" class="img-fluid">
-                </div>
-            </div>
-
-            <div class="col-md-2">
-                <div class="partenaires">
-                    <img src="{{ asset('img/JE_logo.png') }}" alt="" class="img-fluid">
-                </div>
-            </div>
-
-            <div class="col-md-2">
-                <div class="partenaires">
-                    <img src="{{ asset('img/JE_logo.png') }}" alt="" class="img-fluid">
-                </div>
-            </div>
-
+        <div class="row espacementpartenaire">
             <div class="col-md-2">
                 <div class="partenaires">
                     <img src="{{ asset('img/JE_logo.png') }}" alt="" class="img-fluid">
@@ -375,125 +357,84 @@
     </div>
 </section>
 
+<!--/ Section Contact/-->
 
-<!--/ Section Blog Star /-->
-<section id="blog" class="blog-mf sect-pt4 route">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="title-box text-center">
-                    <h3 class="title-a">
-                        Produits phares
-                    </h3>
-                    <p class="subtitle-a">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    </p>
-                    <div class="line-mf"></div>
+<section class="bg-image sect-mt4 backcontact" id="about">
+  <div class="container">
+    <div class="row">
+      <div class="mx-auto col-sm-8">
+        <div class="contact-mf">
+          <div id="contact" class="box-shadow-full">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="title-box-2">
+                  <h5 class="title-left">
+                    Nous contacter
+                  </h5>
                 </div>
+
+                <div>
+                  <form action="" method="post" role="form" class="contactForm">
+                    <div id="sendmessage">Merci pour votre message !</div>
+                    <div id="errormessage"></div>
+                    <div class="row">
+                    
+                        <div class="form-group col-md-4">
+                          <select name="type" id="inputState" class="form-control">
+                            <option selected>Civilité</option>
+                            <option>Mr</option>
+                            <option>Mrs</option>
+                          </select>
+                        </div>
+                      <div class="col-md-12 mb-3">
+                      
+                        <div class="form-group">
+                          <input type="text" name="name" class="form-control" id="name" placeholder="Nom" data-rule="minlen:4" data-msg="Minimum 4 caractères" />
+                          <div class="validation"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 mb-3">
+                        <div class="form-group">
+                          <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="Rentrer une email valide" />
+                          <div class="validation"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 mb-3">
+                        <div class="form-group">
+                          <input type="text" class="form-control" name="subject" id="subject" placeholder="Sujet" />
+                          <div class="validation"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 mb-3">
+                        <div class="form-group">
+                          <input type="text" class="form-control" name="societe" id="subject" placeholder="Société" />
+                          <div class="validation"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 mb-3">
+                        <div class="form-group">
+                          <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Message requis" placeholder="Message"></textarea>
+                          <div class="validation"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 text-center">
+                        <button type="submit" class="button button-a button-big button-rouded">Envoyer</button>
+                      </div>
+                    </div>
+                    
+                  </form>
+                </div>
+
+              </div>
             </div>
+          </div>
         </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card card-blog">
-                    <div class="card-img">
-                        <a href="blog-single.html"><img src="{{ asset('img/post-1.jpg') }}" alt="" class="img-fluid"></a>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-category-box">
-                            <div class="card-category">
-                                <h6 class="category">Travel</h6>
-                            </div>
-                        </div>
-                        <h3 class="card-title"><a href="blog-single.html">See more ideas about Travel</a></h3>
-                        <p class="card-description">
-                            Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Praesent sapien massa, convallis
-                            a pellentesque nec,
-                            egestas non nisi.
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="post-author">
-                            <a href="#">
-                                <img src="img/testimonial-2.jpg" alt="" class="avatar rounded-circle">
-                                <span class="author">Morgan Freeman</span>
-                            </a>
-                        </div>
-                        <div class="post-date">
-                            <span class="ion-ios-clock-outline"></span> 10 min
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card card-blog">
-                    <div class="card-img">
-                        <a href="blog-single.html"><img src="img/post-2.jpg" alt="" class="img-fluid"></a>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-category-box">
-                            <div class="card-category">
-                                <h6 class="category">Web Design</h6>
-                            </div>
-                        </div>
-                        <h3 class="card-title"><a href="blog-single.html">See more ideas about Travel</a></h3>
-                        <p class="card-description">
-                            Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Praesent sapien massa, convallis
-                            a pellentesque nec,
-                            egestas non nisi.
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="post-author">
-                            <a href="#">
-                                <img src="img/testimonial-2.jpg" alt="" class="avatar rounded-circle">
-                                <span class="author">Morgan Freeman</span>
-                            </a>
-                        </div>
-                        <div class="post-date">
-                            <span class="ion-ios-clock-outline"></span> 10 min
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card card-blog">
-                    <div class="card-img">
-                        <a href="blog-single.html"><img src="img/post-3.jpg" alt="" class="img-fluid"></a>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-category-box">
-                            <div class="card-category">
-                                <h6 class="category">Web Design</h6>
-                            </div>
-                        </div>
-                        <h3 class="card-title"><a href="blog-single.html">See more ideas about Travel</a></h3>
-                        <p class="card-description">
-                            Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Praesent sapien massa, convallis
-                            a pellentesque nec,
-                            egestas non nisi.
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="post-author">
-                            <a href="#">
-                                <img src="img/testimonial-2.jpg" alt="" class="avatar rounded-circle">
-                                <span class="author">Morgan Freeman</span>
-                            </a>
-                        </div>
-                        <div class="post-date">
-                            <span class="ion-ios-clock-outline"></span> 10 min
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-</section>
-<!--/ Section Blog End /-->
+  </div>
 
 
 
-</body>
-
+<!--/ Contact End /-->
 
 {% endblock %}

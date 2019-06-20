@@ -3,7 +3,7 @@
 
 {% block title %}
 
-    Nascom | Slug...
+    {{ categorie.name }}
 
 {#  
 {% set active = categorie.slug %} 
@@ -45,6 +45,7 @@
 
         <div class="row">
 
+               {% for produit in produits %}
 
             <div class="col-md-4">
                 <div class="card card-blog">
@@ -70,71 +71,8 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="col-md-4">
-                <div class="card card-blog">
-                    <div class="card-img">
-                        <a href="blog-single.html"><img src="{{ asset('img/post-1.jpg') }}" alt="" class="img-fluid"></a>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-category-box">
-                            <div class="card-category">
-                                <h6 class="category">Travel</h6>
-                            </div>
-                        </div>
-                        <h3 class="card-title"><a href="blog-single.html">See more ideas about Travel</a></h3>
-                        <p class="card-description">
-                            Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Praesent sapien massa, convallis
-                            a pellentesque nec,
-                            egestas non nisi.
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="post-author">
-                            <a href="#">
-                                <img src="img/testimonial-2.jpg" alt="" class="avatar rounded-circle">
-                                <span class="author">Morgan Freeman</span>
-                            </a>
-                        </div>
-                        <div class="post-date">
-                            <span class="ion-ios-clock-outline"></span> 10 min
-                        </div>
-                    </div>
-                </div>
-            </div>
+             {% endfor %}
 
-
-            <div class="col-md-4">
-                <div class="card card-blog">
-                    <div class="card-img">
-                        <a href="blog-single.html"><img src="img/post-3.jpg" alt="" class="img-fluid"></a>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-category-box">
-                            <div class="card-category">
-                                <h6 class="category">Web Design</h6>
-                            </div>
-                        </div>
-                        <h3 class="card-title"><a href="blog-single.html">See more ideas about Travel</a></h3>
-                        <p class="card-description">
-                            Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Praesent sapien massa, convallis
-                            a pellentesque nec,
-                            egestas non nisi.
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="post-author">
-                            <a href="#">
-                                <img src="img/testimonial-2.jpg" alt="" class="avatar rounded-circle">
-                                <span class="author">Morgan Freeman</span>
-                            </a>
-                        </div>
-                        <div class="post-date">
-                            <span class="ion-ios-clock-outline"></span> 10 min
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             </div>
             </div>
@@ -145,79 +83,6 @@
   {# Sidebar #}
   {% include 'components/_sidebar.html.twig' %}
   {# {{ render(controller('App\\Controller\\TechNews\\IndexController::sidebar')) }}#}
-
-  <!--
-
-            <div class="box-comments">
-              <div class="title-box-2">
-                <h4 class="title-comments title-left">Comments (34)</h4>
-              </div>
-              <ul class="list-comments">
-                <li>
-                  <div class="comment-avatar">
-                    <img src="img/testimonial-2.jpg" alt="">
-                  </div>
-                  <div class="comment-details">
-                    <h4 class="comment-author">Oliver Colmenares</h4>
-                    <span>18 Sep 2017</span>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores reprehenderit, provident cumque
-                      ipsam temporibus maiores
-                      quae natus libero optio, at qui beatae ducimus placeat debitis voluptates amet corporis.
-                    </p>
-                    <a href="3">Reply</a>
-                  </div>
-                </li>
-                <li>
-                  <div class="comment-avatar">
-                    <img src="img/testimonial-4.jpg" alt="">
-                  </div>
-                  <div class="comment-details">
-                    <h4 class="comment-author">Carmen Vegas</h4>
-                    <span>18 Sep 2017</span>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores reprehenderit, provident cumque
-                      ipsam temporibus maiores
-                      quae natus libero optio, at qui beatae ducimus placeat debitis voluptates amet corporis,
-                      veritatis deserunt.
-                    </p>
-                    <a href="3">Reply</a>
-                  </div>
-                </li>
-                <li class="comment-children">
-                  <div class="comment-avatar">
-                    <img src="img/testimonial-2.jpg" alt="">
-                  </div>
-                  <div class="comment-details">
-                    <h4 class="comment-author">Oliver Colmenares</h4>
-                    <span>18 Sep 2017</span>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores reprehenderit, provident cumque
-                      ipsam temporibus maiores
-                      quae.
-                    </p>
-                    <a href="3">Reply</a>
-                  </div>
-                </li>
-                <li>
-                  <div class="comment-avatar">
-                    <img src="img/testimonial-2.jpg" alt="">
-                  </div>
-                  <div class="comment-details">
-                    <h4 class="comment-author">Oliver Colmenares</h4>
-                    <span>18 Sep 2017</span>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores reprehenderit, provident cumque
-                      ipsam temporibus maiores
-                      quae natus libero optio.
-                    </p>
-                    <a href="3">Reply</a>
-                  </div>
-                </li>
-              </ul>
-            </div>
-
-   -->
 
 
 {% endblock %}

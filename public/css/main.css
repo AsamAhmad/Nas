@@ -1,9 +1,21 @@
 
-/*------/ INDEX /------*/
+/*======================================
+//--//-->   INDEX
+======================================*/
+
 
 .backindex
 {
     background-image: url("/img/PACKrouteursNASCOM.webp");
+}
+
+.backcontact{
+    background-image: url("/img/contact-us-header.webp");
+    top: 0;
+    left: 0px;
+    padding: 0;
+    width: 100%;
+    opacity: .9;
 }
 
 .testimonialsback
@@ -28,17 +40,51 @@
     height: 40px;
 }
 
-/*------/ Footer /------*/
+.espacementpartenaire
+{
+    justify-content: center;
+    height: 20vh;
+}
+
+
+
+/*======================================
+//--//-->   FOOTER
+======================================*/
+
+
 
 .footerbacksecurity
 {
+
+/*------/ Dans le cas ou le back du footer est clair alors le mieux est d'appliquer un petit fond bleu pour le mettre en avant.
+    
+
     background-color: #48abec;
     top: 0;
     left: 0px;
     padding: 0;
     width: 100%;
     opacity: .4;
+    */
+
 }
+
+
+.copyright-box {
+    background-color: #E9ECEF;
+    color: #6C757D;
+  }
+
+.credits .modifdufooter a
+{
+    color: #48abec;
+}
+.credits .modifdufooter a:hover
+{
+    color: white;
+}
+
 
 /*------/ Produits /------*/
 

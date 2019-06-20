@@ -5,8 +5,12 @@ namespace App\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use App\Entity\Membre;
 use App\Entity\Produit;
 use App\Entity\Image;
+use App\Entity\Categorie;
+use App\Entity\Document;
+use App\Entity\Contact;
 
 
 class AdvertController extends AbstractController
@@ -17,8 +21,22 @@ class AdvertController extends AbstractController
 
     public function index ()
     {
-        return $this->render('index/index.html.twig');
-      }
+      $produit = $this->getDoctrine()
+            ->getRepository(Produit::class)
+            ->findAll();
+
+        $categorie = $this->getDoctrine()
+            ->getRepository(Categorie::class)
+            ->findAll();
+
+        return $this->render("index/index.html.twig", [
+          "produits" => $produit,
+          "categorie" => $categorie,
+          ]);
+        }
+
+
+
 
 
     /**
@@ -30,10 +48,15 @@ class AdvertController extends AbstractController
 
       $produit = $this->getDoctrine()
             ->getRepository(Produit::class)
+            ->findAll();
+
+        $categorie = $this->getDoctrine()
+            ->getRepository(Categorie::class)
             ->find(1);
 
         return $this->render("index/categorie.html.twig", [
-          "produit" => $produit
+          "produits" => $produit,
+          "categorie" => $categorie,
       ]);
       }
 
@@ -59,13 +82,16 @@ class AdvertController extends AbstractController
       ]);
       }
 
+
+
+
     /**
      * @Route("/contact", name="formcontact")
      */
 
     public function contact ()
     {
-        return $this->render('index/contact.html.twig');
+        return $this->render('membre/contact.html.twig');
       }
 
     /**
@@ -97,7 +123,5 @@ class AdvertController extends AbstractController
     {
         return $this->render('components/mentionslegales.html.twig');
     }
-
-
 
 }
