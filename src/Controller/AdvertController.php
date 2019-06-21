@@ -15,6 +15,16 @@ use App\Entity\Contact;
 
 class AdvertController extends AbstractController
 {
+
+
+
+/*======================================
+//--//-->   INDEX
+======================================*/
+
+
+
+
     /**
      * @Route("/", name="index")
      */
@@ -36,6 +46,10 @@ class AdvertController extends AbstractController
         }
 
 
+
+/*======================================
+//--//-->   CATEGORIE
+======================================*/
 
 
 
@@ -59,6 +73,15 @@ class AdvertController extends AbstractController
           "categorie" => $categorie,
       ]);
       }
+
+
+
+
+
+/*======================================
+//--//-->   PRODUIT
+======================================*/
+
 
 
     /**
@@ -85,24 +108,9 @@ class AdvertController extends AbstractController
 
 
 
-    /**
-     * @Route("/contact", name="formcontact")
-     */
-
-    public function contact ()
-    {
-        return $this->render('membre/contact.html.twig');
-      }
-
-    /**
-     * @Route("/hidden", name="cache")
-     */
-
-    public function hidden ()
-    {
-        return $this->render('hidden.html.twig');
-    }
-
+/*======================================
+//--//-->   AUTRES, mentions, conditions...
+======================================*/
 
 
     /**

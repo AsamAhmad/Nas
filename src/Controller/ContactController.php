@@ -11,91 +11,58 @@ use App\Entity\Membre;
 use App\Entity\Contact;
 use App\Entity\Produit;
 use Symfony\Component\HttpFoundation\Session\Session;
+use Doctrine\Common\Persistence\ObjectManager;
+use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+
 
 
 class ContactController extends AbstractController
 {
     /** 
-     * Page de contact
+     * 
+     * @Route("/contact", name="formcontact")
      */
 
-    public function contactform(Request $request)
+
+    public function addcontact(Request $request, ObjectManager $em, \Swift_Mailer $mailer) 
     {
         $contact = new Contact();
-        $form = $this->createForm(ContactFormType::class, $contact)
-        ->handleRequest($request);
 
+        $form = $this->createForm(ContactFormType::class, $contact);
         $form->handleRequest($request);
 
-        # Vérification de la soumission du formulaire
+        // $contactFormData = $form->getData();
+
         if($form->isSubmitted() && $form->isValid()) {
 
-            # Sauvegarde en BDD.
             $em = $this->getDoctrine()->getManager();
             $em->persist($contact);
             $em->flush();
 
-            /*
-            # Notification
-            $this->addFlash('notice',
-                'Félicitation, votre message est envoyé !');
+            # notification
+            $this->addFlash('notice', 'Félicitation, le mail nous est bien parvenu!');
 
-            # Redirection
-            return $this->redirectToRoute('categorie');
-            */
-        }
-
-        /* 
-        # Affichage du Formulaire dans la vue
-        return $this->render('membre/contact.html.twig', [
-           'form' => $form->createView()
-        ]); 
-        */
-        # Affichage du Formulaire dans la vue
-        return $this->render('membre/contact.html.twig');
-
-    }
-
-
-
-/*
-
-    public function contactform(Request $request)
-    {
-        # Création d'un Membre dans la bdd pour la table Contact
-        $membre = new Membre();
-        $membre->setDateInscription(new \DateTime());
-        $membre->setRoles(['ROLE_MEMBRE']);
-
-        # Création du Formulaire "MembreFormType"
-        $form = $this->createForm(MembreFormType::class, $membre)
-            ->handleRequest($request);
-
-        # Vérification de la soumission du formulaire
-        if($form->isSubmitted() && $form->isValid()) {
-
-            # Encoder le mot de passe
-            $membre->setPassword(
-                $encoder->encodePassword($membre, $membre->getPassword())
+            # Envoie de l'email
+            /*$message = (new \Swift_Message('Hello Email'))
+            ->setFrom($contactFormData['email'])
+            ->setTo('sunanmahjura2@gmail.com')
+            ->setBody(
+            $contactFormData['message'],
+            'text/plain'
+            //$this->renderView(
+                // templates/emails/registration.html.twig
+                //'emails/registration.html.twig',
+                //['name' => $name]
             );
 
-            # Sauvegarde en BDD.
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($membre);
-            $em->flush();
+        $mailer->send($message);*/
 
-            # Notification
-            $this->addFlash('notice',
-                'Félicitation, vous pouvez vous connecter !');
-
-            # Redirection
-            return $this->redirectToRoute('membre_connexion');
+            # Redirection vers la page d'accueil
+            return $this->redirectToRoute('index');
         }
-
-        # Affichage du Formulaire dans la vue
-        return $this->render('index/index.html.twig', [
-           'form' => $form->createView()
-        ]);
+        
+        return $this->render('membre/contact.html.twig', [
+            'form' => $form->createView()
+            ]);
     }
-     */
 }

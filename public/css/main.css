@@ -9,14 +9,6 @@
     background-image: url("/img/PACKrouteursNASCOM.webp");
 }
 
-.backcontact{
-    background-image: url("/img/contact-us-header.webp");
-    top: 0;
-    left: 0px;
-    padding: 0;
-    width: 100%;
-    opacity: .9;
-}
 
 .testimonialsback
 {
@@ -49,9 +41,35 @@
 
 
 /*======================================
-//--//-->   FOOTER
+//--//-->   CONTACT
 ======================================*/
 
+
+.backcontact{
+    background-image: url("/img/contact-us-header.webp");
+    top: 0;
+    left: 0px;
+    padding: 0;
+    width: 100%;
+    opacity: .9;
+}
+
+
+.box-shadow-full.contact
+{
+    padding: 3rem 1.25rem;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.879);
+    margin-bottom: 3rem;
+    z-index: 2;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);  
+}
+
+
+
+/*======================================
+//--//-->   FOOTER
+======================================*/
 
 
 .footerbacksecurity
@@ -67,13 +85,17 @@
     width: 100%;
     opacity: .4;
     */
-
 }
 
-
 .copyright-box {
-    background-color: #E9ECEF;
+   /* background-color: #E9ECEF;*/
     color: #6C757D;
+  }
+  
+.credits .modifdufooter
+  {
+    background-color: transparent;
+    /*background-color: #F5F5F5;*/
   }
 
 .credits .modifdufooter a
@@ -82,18 +104,28 @@
 }
 .credits .modifdufooter a:hover
 {
-    color: white;
+    color: #6C757D;
 }
 
 
-/*------/ Produits /------*/
+
+
+/*======================================
+//--//-->   PRODUITS
+======================================*/
+
 
 .tabsfont
 {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-/*------/ Inscription /------*/
+
+
+/*======================================
+//--//-->   Inscription
+======================================*/
+
 
 .backinscription{
     background-image: url("/img/inscription05.jpg");
@@ -109,7 +141,11 @@
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.2);  
 }
 
-/*------/ Connexion /------*/
+
+
+/*======================================
+//--//-->   Connexion
+======================================*/
 
 .backconnexion{
     background-image: url("/img/inscription01.jpg");
@@ -126,7 +162,14 @@
 }
 
 
-/*------/ Buttom Connexion Inscription Icon /------*/
+
+
+/*======================================
+//--//-->   AUTRES
+======================================*/
+
+
+/*------/Icon /------*/
 
 .fa.fa-user.icon{
 font-size: 36px;
@@ -137,6 +180,11 @@ color: #48abec;
     font-size: 36px;
     color: white;
 }
+
+
+
+
+/*------/ Buttom Connexion Inscription /------*/
 
 .btn.btn-primary.connexion{
     background-color: #48abec;
