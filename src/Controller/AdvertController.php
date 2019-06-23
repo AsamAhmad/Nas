@@ -48,16 +48,16 @@ class AdvertController extends AbstractController
 
 
 /*======================================
-//--//-->   CATEGORIE
+//--//-->   ALL PRODUCT
 ======================================*/
 
 
 
     /**
-     * @Route("/categorie", name="categorie")
+     * @Route("/allproduct", name="allproduct")
      */
 
-    public function categorie ()
+    public function allproduct ()
     {
 
       $produit = $this->getDoctrine()
@@ -68,7 +68,7 @@ class AdvertController extends AbstractController
             ->getRepository(Categorie::class)
             ->find(1);
 
-        return $this->render("index/categorie.html.twig", [
+        return $this->render("index/allproduct.html.twig", [
           "produits" => $produit,
           "categorie" => $categorie,
       ]);
@@ -85,7 +85,7 @@ class AdvertController extends AbstractController
 
 
     /**
-     * @Route("/produit", name="produit")
+     * @Route("/produit", name="ficheproduit")
      */
 
     public function produit ()

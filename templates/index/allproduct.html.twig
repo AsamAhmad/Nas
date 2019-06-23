@@ -1,9 +1,6 @@
 {% extends "layout.html.twig" %}
-
-
-{% block title %}
-
-    {{ categorie.name }}
+{% set active = 'Nascom' %}
+{% block page_title %} Produits {% endblock %}
 
 {#  
 {% set active = categorie.slug %} 
@@ -15,7 +12,6 @@
 {% endblock %}  
 #}
 
-{% endblock %}
 
 {% block content %}
 
@@ -26,7 +22,7 @@
     <div class="intro-content display-table">
       <div class="table-cell">
         <div class="container">
-          <h2 class="intro-title mb-4"> NOM DE LA CATEGORIE </h2>
+          <h2 class="intro-title mb-4"> PRODUITS </h2>
 
         </div>
       </div>

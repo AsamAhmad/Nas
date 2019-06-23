@@ -1,0 +1,51 @@
+{% extends "layout.html.twig" %}
+{% set active = 'Nascom' %}
+{% block page_title %} Search 
+{% endblock %}
+
+{#{% set active = categorie.slug %}}
+{{% block page_title %}
+{{ article.title | title }}
+{% endblock %}  
+#}
+
+
+{% block content %}
+
+
+  <!--/ Intro Skew Star /-->
+  <div class="intro intro-single bg-image">
+    <div class="overlay-mf"></div>
+    <div class="intro-content display-table">
+      <div class="table-cell">
+        <div class="container">
+          <h2 class="intro-title mb-4"> RECHERCHE AVANCEE </h2>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/ Intro Skew End /-->
+
+  <!--/ Section Blog-Single Star /-->
+  <section class="blog-wrapper sect-pt4" id="blog">
+    <div class="mx-auto container">
+      <div class="row">
+        <div class="mx-auto col-md-8">
+          <div class="post-box">
+            <div class="post-thumb">
+            <div class="mx-auto col-md-8">
+            <div class="widget-sidebar sidebar-search">
+                <h5 class="sidebar-title">Recherche des produits</h5>
+                    
+
+                    {% form_theme search_form 'bootstrap_4_layout.html.twig' %}
+                    
+                    {{ form (search_form) }}
+
+            </div>
+            </div>
+            </div>
+        </div>
+
+{% endblock %}

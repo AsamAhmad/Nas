@@ -14,26 +14,28 @@
                 <li class="nav-item">
                     <a class="nav-link js-scroll active" href="{{ path('index') }}">Accueil</a>
                 </li>
+
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="{{ path('categorie') }}" role="button" aria-haspopup="true" aria-expanded="false">Categorie</a>
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Produits</a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="">Boucle categorie.name {#{ categorie.name }#}</a>
+                        <a class="dropdown-item" href="{{ path('allproduct') }}">All product</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Developpement</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{{ path('membre_inscription') }}">Inscription</a>
-                        <a class="dropdown-item" href="{{ path('membre_connexion') }}">Connexion</a>
-                        <a class="dropdown-item" href="{{ path('produit') }}">Fiche Produit </a>
-                        <div class="dropdown-divider"></div>
+                        {#% for produit in produits %}
+                        <a class="dropdown-item" href="{{ produit.id }}">{{ produit.name }}</a>
+                        {% endfor %#}
+                         <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="{{ path('ficheproduit') }}">Fiche produit</a>
                     </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link js-scroll" href="{{ path ('formcontact') }}">Contact</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll" href="{{ path ('search_produits') }}">Recherche avancée</a>
+                </li>
+
+
+                
 
                 <!--Déconnexion-->
 
