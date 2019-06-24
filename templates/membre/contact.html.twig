@@ -6,7 +6,60 @@
 
 {% block content %}
 
+
+        {% form_theme form 'bootstrap_3_layout.html.twig' %}
+
 <!--/ Section Contact/-->
+
+<section class="bg-image mt-4 backcontact">
+  <div class="container">
+    <div class="row">
+      <div class="mx-auto col-sm-8">
+        <div class="contact-mf">
+          <div id="contact" class="box-shadow-full contact">
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="title-box-2">
+                  <h5 class="title-left text-center">
+                    Nous contacter
+                  </h5>
+                </div>
+
+                <div>
+
+                      {{ form_start (form )}}
+
+                      <div class="col-md-12 mb-3">
+                        <div class="form-group">
+                          
+                      {{ form (form) }}
+
+                          <div class="validation"></div>
+                        </div>
+                      </div>
+
+                      {{ form_end (form, { attr: { novalidate: 'novalidate' } } ) }}
+
+
+            {% for message in app.flashes('notice') %}
+                <div class="alert alert-success">
+                    {{ message }}
+                </div>
+            {% endfor %}
+
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- 
 
 <section class="bg-image mt-4 backcontact">
   <div class="container">
@@ -68,6 +121,7 @@
                       <div class="col-md-12 text-center">
                         <button type="submit" class="button button-a button-big button-rouded">Envoyer</button>
                       </div>
+
                     </div>
                   </form>
                 </div>
@@ -79,5 +133,11 @@
       </div>
     </div>
   </div>
+
+
+-->
+
+
+
 
 {% endblock %}

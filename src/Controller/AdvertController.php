@@ -7,40 +7,87 @@ use App\Entity\Produit;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use App\Entity\Membre;
+use App\Entity\Produit;
 use App\Entity\Image;
+use App\Entity\Categorie;
+use App\Entity\Document;
+use App\Entity\Contact;
 
 
 class AdvertController extends AbstractController
 {
+
+
+
+/*======================================
+//--//-->   INDEX
+======================================*/
+
+
+
+
     /**
      * @Route("/", name="index")
      */
 
     public function index ()
     {
-        return $this->render('index/index.html.twig');
-      }
+      $produit = $this->getDoctrine()
+            ->getRepository(Produit::class)
+            ->findAll();
+
+        $categorie = $this->getDoctrine()
+            ->getRepository(Categorie::class)
+            ->findAll();
+
+        return $this->render("index/index.html.twig", [
+          "produits" => $produit,
+          "categorie" => $categorie,
+          ]);
+        }
+
+
+
+/*======================================
+//--//-->   ALL PRODUCT
+======================================*/
+
 
 
     /**
-     * @Route("/categorie", name="categorie")
+     * @Route("/allproduct", name="allproduct")
      */
 
-    public function categorie ()
+    public function allproduct ()
     {
 
       $produit = $this->getDoctrine()
             ->getRepository(Produit::class)
+            ->findAll();
+
+        $categorie = $this->getDoctrine()
+            ->getRepository(Categorie::class)
             ->find(1);
 
-        return $this->render("index/categorie.html.twig", [
-          "produit" => $produit
+        return $this->render("index/allproduct.html.twig", [
+          "produits" => $produit,
+          "categorie" => $categorie,
       ]);
       }
 
 
+
+
+
+/*======================================
+//--//-->   PRODUIT
+======================================*/
+
+
+
     /**
-     * @Route("/produit", name="produit")
+     * @Route("/produit", name="ficheproduit")
      */
 
     public function produit ()
@@ -60,23 +107,13 @@ class AdvertController extends AbstractController
       ]);
       }
 
-    /**
-     * @Route("/contact", name="formcontact")
-     */
 
-    public function contact ()
-    {
-        return $this->render('index/contact.html.twig');
-      }
 
-    /**
-     * @Route("/hidden", name="cache")
-     */
 
-    public function hidden ()
-    {
-        return $this->render('hidden.html.twig');
-    }
+/*======================================
+//--//-->   AUTRES, mentions, conditions...
+======================================*/
+
 
     /**
      * @Route("/cg", name="cg")

@@ -23,7 +23,7 @@
                 <!--<p class="display-6 color-d">Hello, world!</p>-->
                 <h1 class="intro-title mb-4">NASCOM</h1>
                 <p class="intro-subtitle"><span class="text-slider-items">Routeur ADSL / VDSL / FIBRE / 4G LTE, Matériel informatique, Vente en gros</span><strong class="text-slider"></strong></p>
-                 <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4 btnbtn" href="#about" role="button">Voir nos produits phares</a></p>
+                 <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4 btnbtn" href="#work" role="button">Voir nos produits phares</a></p>
             </div>
         </div>
     </div>
@@ -286,29 +286,13 @@
                     <div class="testimonial-box">
                         <div class="author-test">
                             <img src="{{ asset('img/testimonial-2.jpg') }}" alt="" class="rounded-circle b-shadow-a">
-                            <a href=""> <span class="author">FORMULAIRE DE CONTACT</span></a>
+                            <a class="display-3" href="{{ path ('formcontact') }}"> NOUS CONTACTER</a>
                         </div>
                         <div class="content-test">
-                            <p class="description lead">
-                                Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet,
-                                consectetur adipiscing elit.
-                            </p>
-                            <span class="comit"><i class="fa fa-quote-right"></i></span>
+                        <p class="description lead"> </p>
                         </div>
                     </div>
-                    <div class="testimonial-box">
-                        <div class="author-test">
-                            <img src="{{ asset('img/testimonial-4.jpg') }}" alt="" class="rounded-circle b-shadow-a">
-                            <span class="author">Marta Socrate</span>
-                        </div>
-                        <div class="content-test">
-                            <p class="description lead">
-                                Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Lorem ipsum dolor sit amet,
-                                consectetur adipiscing elit.
-                            </p>
-                            <span class="comit"><i class="fa fa-quote-right"></i></span>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -319,7 +303,7 @@
 
 
 <!--/ Partenaire Start /-->
-<section id="partenaire" class="blog-mf sect-pt4 route">
+<section id="partenaire" class="blog-mf sect-pt4 route ">
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
@@ -334,40 +318,35 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row espacementpartenaire">
+
             <div class="col-md-2">
                 <div class="partenaires">
-                    <img src="{{ asset('img/JE_logo.png') }}" alt="" class="img-fluid">
+                    <img src="{{ asset('img/alphalink.png') }}" alt="" class="img-fluid">
                 </div>
             </div>
 
             <div class="col-md-2">
                 <div class="partenaires">
-                    <img src="{{ asset('img/JE_logo.png') }}" alt="" class="img-fluid">
+                    <img src="{{ asset('img/technicolor.png') }}" alt="" class="img-fluid">
                 </div>
             </div>
-
+            
             <div class="col-md-2">
                 <div class="partenaires">
-                    <img src="{{ asset('img/JE_logo.png') }}" alt="" class="img-fluid">
+                    <img src="{{ asset('img/logo-bleu.png') }}" alt="" class="img-fluid">
                 </div>
             </div>
-
+            
             <div class="col-md-2">
                 <div class="partenaires">
-                    <img src="{{ asset('img/JE_logo.png') }}" alt="" class="img-fluid">
+                    <img src="{{ asset('img/logo-chrysalead_0.png') }}" alt="" class="img-fluid">
                 </div>
-            </div>
-
+            </div>            
+            
             <div class="col-md-2">
                 <div class="partenaires">
-                    <img src="{{ asset('img/JE_logo.png') }}" alt="" class="img-fluid">
-                </div>
-            </div>
-
-            <div class="col-md-2">
-                <div class="partenaires">
-                    <img src="{{ asset('img/JE_logo.png') }}" alt="" class="img-fluid">
+                    <img src="{{ asset('img/logo-trappes-220x151.png') }}" alt="" class="img-fluid">
                 </div>
             </div>
 
@@ -376,124 +355,87 @@
 </section>
 
 
-<!--/ Section Blog Star /-->
-<section id="blog" class="blog-mf sect-pt4 route">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="title-box text-center">
-                    <h3 class="title-a">
-                        Produits phares
-                    </h3>
-                    <p class="subtitle-a">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    </p>
-                    <div class="line-mf"></div>
+
+
+<!--/ Section Contact/-->
+
+<!--
+<section class="bg-image sect-mt4 backcontact" id="about">
+  <div class="container">
+    <div class="row">
+      <div class="mx-auto col-sm-8">
+        <div class="contact-mf">
+          <div id="contact" class="box-shadow-full">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="title-box-2">
+                  <h5 class="title-left">
+                    Nous contacter
+                  </h5>
                 </div>
+
+                <div>
+                  <form action="" method="post" role="form" class="contactForm">
+                    <div id="sendmessage">Merci pour votre message !</div>
+                    <div id="errormessage"></div>
+                    <div class="row">
+                    
+                        <div class="form-group col-md-4">
+                          <select name="type" id="inputState" class="form-control">
+                            <option selected>Civilité</option>
+                            <option>Mr</option>
+                            <option>Mrs</option>
+                          </select>
+                        </div>
+                      <div class="col-md-12 mb-3">
+                      
+                        <div class="form-group">
+                          <input type="text" name="name" class="form-control" id="name" placeholder="Nom" data-rule="minlen:4" data-msg="Minimum 4 caractères" />
+                          <div class="validation"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 mb-3">
+                        <div class="form-group">
+                          <input type="email" class="form-control" name="email" id="email" placeholder="Email" data-rule="email" data-msg="Rentrer une email valide" />
+                          <div class="validation"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 mb-3">
+                        <div class="form-group">
+                          <input type="text" class="form-control" name="subject" id="subject" placeholder="Sujet" />
+                          <div class="validation"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 mb-3">
+                        <div class="form-group">
+                          <input type="text" class="form-control" name="societe" id="subject" placeholder="Société" />
+                          <div class="validation"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 mb-3">
+                        <div class="form-group">
+                          <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Message requis" placeholder="Message"></textarea>
+                          <div class="validation"></div>
+                        </div>
+                      </div>
+                      <div class="col-md-12 text-center">
+                        <button type="submit" class="button button-a button-big button-rouded">Envoyer</button>
+                      </div>
+                    </div>
+                    
+                  </form>
+                </div>
+
+              </div>
             </div>
+          </div>
         </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card card-blog">
-                    <div class="card-img">
-                        <a href="blog-single.html"><img src="{{ asset('img/post-1.jpg') }}" alt="" class="img-fluid"></a>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-category-box">
-                            <div class="card-category">
-                                <h6 class="category">Travel</h6>
-                            </div>
-                        </div>
-                        <h3 class="card-title"><a href="blog-single.html">See more ideas about Travel</a></h3>
-                        <p class="card-description">
-                            Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Praesent sapien massa, convallis
-                            a pellentesque nec,
-                            egestas non nisi.
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="post-author">
-                            <a href="#">
-                                <img src="img/testimonial-2.jpg" alt="" class="avatar rounded-circle">
-                                <span class="author">Morgan Freeman</span>
-                            </a>
-                        </div>
-                        <div class="post-date">
-                            <span class="ion-ios-clock-outline"></span> 10 min
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card card-blog">
-                    <div class="card-img">
-                        <a href="blog-single.html"><img src="img/post-2.jpg" alt="" class="img-fluid"></a>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-category-box">
-                            <div class="card-category">
-                                <h6 class="category">Web Design</h6>
-                            </div>
-                        </div>
-                        <h3 class="card-title"><a href="blog-single.html">See more ideas about Travel</a></h3>
-                        <p class="card-description">
-                            Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Praesent sapien massa, convallis
-                            a pellentesque nec,
-                            egestas non nisi.
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="post-author">
-                            <a href="#">
-                                <img src="img/testimonial-2.jpg" alt="" class="avatar rounded-circle">
-                                <span class="author">Morgan Freeman</span>
-                            </a>
-                        </div>
-                        <div class="post-date">
-                            <span class="ion-ios-clock-outline"></span> 10 min
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card card-blog">
-                    <div class="card-img">
-                        <a href="blog-single.html"><img src="img/post-3.jpg" alt="" class="img-fluid"></a>
-                    </div>
-                    <div class="card-body">
-                        <div class="card-category-box">
-                            <div class="card-category">
-                                <h6 class="category">Web Design</h6>
-                            </div>
-                        </div>
-                        <h3 class="card-title"><a href="blog-single.html">See more ideas about Travel</a></h3>
-                        <p class="card-description">
-                            Proin eget tortor risus. Pellentesque in ipsum id orci porta dapibus. Praesent sapien massa, convallis
-                            a pellentesque nec,
-                            egestas non nisi.
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="post-author">
-                            <a href="#">
-                                <img src="img/testimonial-2.jpg" alt="" class="avatar rounded-circle">
-                                <span class="author">Morgan Freeman</span>
-                            </a>
-                        </div>
-                        <div class="post-date">
-                            <span class="ion-ios-clock-outline"></span> 10 min
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
-</section>
-<!--/ Section Blog End /-->
+  </div>
 
+-->
 
-
-</body>
-
+<!--/ Contact End /-->
 
 {% endblock %}
