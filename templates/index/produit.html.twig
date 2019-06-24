@@ -52,7 +52,7 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img class="d-block w-100" src="{#{ produit.image.id }#}" alt="First slide">
+          <img class="d-block w-100" src="img/post-2.jpg" alt="First slide">
         </div>
         <div class="carousel-item">
           <img class="d-block w-100" src="img/post-3.jpg" alt="Second slide">
@@ -99,15 +99,13 @@
               </p>
 
 
-
-              {{ produit.application_diagram | summarize_tabs }}
               <div class="onglet">
                 <nav class="nav nav-tabs tabsfont">
                   <a class="nav-item nav-link active lead" href="#p1" data-toggle="tab"> {{ produit.applicationDiagram | summarize}} </a>
-                  <a class="nav-item nav-link lead" href="#p2" data-toggle="tab"> {{ produit.specification | summarize_tabs }} </a>
-                  <a class="nav-item nav-link lead" href="#p3" data-toggle="tab"> {{ produit.technical_spe | summarize_tabs }} </a>
-                  <a class="nav-item nav-link lead" href="#p4" data-toggle="tab"> {{ produit.protocol | summarize_tabs }} </a>
-                  <a class="nav-item nav-link lead" href="#p5" data-toggle="tab">{{ produit.security | summarize_tabs }}</a>
+                  <a class="nav-item nav-link lead" href="#p2" data-toggle="tab"> {{ produit.specification | summarize }} </a>
+                  <a class="nav-item nav-link lead" href="#p3" data-toggle="tab"> {{ produit.technicalSpe | summarize }} </a>
+                  <a class="nav-item nav-link lead" href="#p4" data-toggle="tab"> {{ produit.protocol | summarize }} </a>
+                  <a class="nav-item nav-link lead" href="#p5" data-toggle="tab">{{ produit.security | summarize }}</a>
                 </nav>
 
 

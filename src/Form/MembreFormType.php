@@ -63,7 +63,7 @@ class MembreFormType extends AbstractType
                 'required' => true,
                 'first_options'  => ['label' => false, 'attr' => ['placeholder' => "Entrez votre mot de passe"]
                 ],
-                'second_options' => ['label' => false, 'attr' => ['placeholder' => 'Confirmer votre mot de passe']
+                'second_options' => ['label' => false, 'attr' => ['placeholder' => 'Confirmez votre mot de passe']
                 ],
             ])
             ->add('termsAccepted', CheckboxType:: class, [
@@ -82,3 +82,4 @@ class MembreFormType extends AbstractType
         $resolver->setDefault('data_class', Membre::class);
     }
 }
+

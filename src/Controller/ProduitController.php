@@ -50,27 +50,11 @@ class ProduitController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/{categorie}/{slug}_{id<\d+>}.html" ,name="default_produit")
-     */
-   /* public function produit ($id)
-    {
-        /*
-         * Recuperation du produit correspondent a l'id en parametre de notre route
-         */
-        /*$produit = $this->getDoctrine()
-                        ->getRepository(Produit::class)
-                        ->find($id);
-
-        return $this->render("index/produit.html.twig", [
-            'produit' => $produit
-        ]);
-    }*/
 
     /**
      * @Route("/{categorie}/{slug}_{id<\d+>}.html", name="default_produit")
      */
-    public function produit ($id)
+    /*public function produit ($id)
     {
         $produit = $this->getDoctrine()
             ->getRepository(Produit::class)
@@ -79,7 +63,7 @@ class ProduitController extends AbstractController
         return $this->render("index/produit.html.twig", [
             'produit' => $produit
         ]);
-    }
+    }*/
 
 
 }
