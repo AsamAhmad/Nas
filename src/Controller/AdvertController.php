@@ -8,7 +8,6 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use App\Entity\Membre;
-use App\Entity\Produit;
 use App\Entity\Image;
 use App\Entity\Categorie;
 use App\Entity\Document;
@@ -123,7 +122,14 @@ class AdvertController extends AbstractController
     {
         return $this->render('components/cg.html.twig');
     }
+    /**
+     * @Route("/mentions", name="mentions")
+     */
 
+    public function mentions ()
+    {
+        return $this->render('components/mentionslegales.html.twig');
+    }
 
     /*
    * Génération de la sidebar

@@ -114,4 +114,12 @@ class Categorie
 
         return $this;
     }
+
+    /*
+     * error: Object of class could not be converted to string
+     */
+    public function __toString()
+    {
+        return $this->name;
+    }
 }

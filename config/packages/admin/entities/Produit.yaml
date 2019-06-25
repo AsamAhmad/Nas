@@ -1,0 +1,47 @@
+easy_admin:
+  entities:
+    Article:
+      class: App\Entity\Produit
+      label: 'Produits'
+      help: 'Vous etes dans la section produit'
+      image_base_path: '/img'
+      #Changer le titre des actions
+      new:
+        title:  'Ajouter un produit'
+        form_options: { validation_groups: ['Default', 'Produit'] }
+      edit:
+        title:  'Modifier un produit'
+        form_options: { validation_groups: ['Default'] }
+      actions:
+        - {name: 'search', icon: 'search', label: false}
+
+        #templates:
+        #edit: 'admin/produit/edit.html.twig'
+      list:
+        title: 'Derniers produits ajoutés'
+        help: null
+        #Champs affichés en listant les articles
+        fields: ['name', { property: 'image1', label: 'Image', type: 'image'}, 'promotion', 'spotlight', 'special']
+
+        #Personnalisation des boutons
+        actions:
+          - {name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-secondary'}
+          - {name: 'delete', icon: 'trash', label: false, css_class: 'btn btn-danger'}
+          - {name: 'new', icon: 'plus', label: false, title: 'Ajouter' }
+
+      #Champs affichés dans le formulaire d'ajout
+      form:
+        fields:
+          - {property: 'name'}
+          - {property: 'description'}
+          - {property: 'slug'}
+          - {property: 'specification'}
+          - {property: 'reference'}
+          - {property: 'image1'}
+          - {property: 'promotion'}
+          - {property: 'spotlight'}
+          - {property: 'promotion'}
+          - {property: 'categorie'}
+          - {property: 'protocol'}
+          - {property: 'date', type: 'datetime'}
+          - {property: 'security'}
