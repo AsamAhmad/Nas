@@ -131,4 +131,13 @@ class AdvertController extends AbstractController
         return $this->render('components/mentionslegales.html.twig');
     }
 
+    /**
+     * @Route("/mentions", name="mentions")
+     */
+
+    public function mentions ()
+    {
+        return $this->render('components/mentionslegales.html.twig');
+    }
+
 }
