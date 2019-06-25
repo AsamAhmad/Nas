@@ -8,7 +8,6 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use App\Entity\Membre;
-use App\Entity\Produit;
 use App\Entity\Image;
 use App\Entity\Categorie;
 use App\Entity\Document;
@@ -125,29 +124,13 @@ class AdvertController extends AbstractController
     }
 
 
-    /*
-   * Génération de la sidebar
-   * */
-    public function sidebar()
+    /**
+     * @Route("/mentions", name="mentions")
+     */
+
+    public function mentions ()
     {
-        $repository = $this->getDoctrine()
-            ->getRepository(Produit::class);
-
-        # Récuperation des 5 derniers produits
-        $produits = $repository-> findByLatest();
-
-        # Récuperation des produits en position speciale
-        $special = $repository->findBySpecial();
-
-        # Récuperation des produits en promotion
-        $promotion = $repository->findByPromotion();
-
-        #Transmission des informations à la vue
-        return $this->render('components/_sidebar.html.twig', [
-            'produits' => $produits,
-            'special' => $special,
-            'promotion' => $promotion
-        ]);
+        return $this->render('components/mentionslegales.html.twig');
     }
 
 }
