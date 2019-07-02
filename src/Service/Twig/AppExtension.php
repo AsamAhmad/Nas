@@ -50,7 +50,7 @@ class AppExtension extends AbstractExtension
                     $stringCut = substr($string, 0, 200);
                     $string = substr($stringCut, 0);
                 }
-                return $string . ' Lire la suite...';
+                return $string . '…';
 
             }, array( 'is_safe' => array( 'html' ) ) ),
 

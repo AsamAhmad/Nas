@@ -17,14 +17,9 @@ use App\Entity\Contact;
 class AdvertController extends AbstractController
 {
 
-
-
 /*======================================
 //--//-->   INDEX
 ======================================*/
-
-
-
 
     /**
      * @Route("/", name="index")
@@ -46,13 +41,9 @@ class AdvertController extends AbstractController
           ]);
         }
 
-
-
 /*======================================
 //--//-->   ALL PRODUCT
 ======================================*/
-
-
 
     /**
      * @Route("/allproduct", name="allproduct")
@@ -75,18 +66,12 @@ class AdvertController extends AbstractController
       ]);
       }
 
-
-
-
-
 /*======================================
-//--//-->   PRODUIT
+//--//-->   FICHE PRODUIT
 ======================================*/
 
-
-
     /**
-     * @Route("/produit", name="ficheproduit")
+     * @Route("/produit", name="ficheproduit") 
      */
 
     public function produit ()
@@ -96,11 +81,6 @@ class AdvertController extends AbstractController
             ->getRepository(Produit::class)
             ->find(1);
 
-      // $repository= $this->getDoctrine()
-       //->getRepository(Image::class)();
-
-       // $images = $repository -> getImages();
-        
         return $this->render("index/produit.html.twig",[
           "produit" => $produit
       ]);
@@ -130,14 +110,4 @@ class AdvertController extends AbstractController
     {
         return $this->render('components/mentionslegales.html.twig');
     }
-
-    /**
-     * @Route("/mentions", name="mentions")
-     */
-
-    public function mentions ()
-    {
-        return $this->render('components/mentionslegales.html.twig');
-    }
-
 }

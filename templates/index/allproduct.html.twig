@@ -46,16 +46,23 @@
             <div class="col-md-4">
                 <div class="card card-blog">
                     <div class="card-img">
-                        <a href="blog-single.html"><img src="{{ asset('img/post-1.jpg') }}" alt="" class="img-fluid"></a>
+                        <a href="{{ path('ficheproduit', {
+                                    'categorie' : produit.categorie.slug,
+                                    'slug' : produit.slug,
+                                    'id'   : produit.id
+                                }) }}"><img src="{{ asset('img/' ~ produit.image1 ) }}" alt="{{ produit.name }}" class="img-fluid"></a>
                     </div>
                     <div class="card-body">
                         <div class="card-category-box">
                             <div class="card-category">
-                                <h6 class="category">Nom de la catégorie</h6>
+                                <h6 class="category">{{ produit.categorie.name }}</h6>
                             </div>
                         </div>
-
-                        <h3 class="card-title"><a href="blog-single.html">{{ produit.name}}</a></h3>
+                        <h3 class="card-title"><a href="{{ path('ficheproduit', {
+                                    'categorie' : produit.categorie.slug,
+                                    'slug' : produit.slug,
+                                    'id'   : produit.id
+                                }) }}">{{ produit.name}}</a></h3>
                         <p class="card-description">
                             {{ produit.description | summarize_categorie}}
                         </p>
@@ -68,17 +75,12 @@
                 </div>
             </div>
              {% endfor %}
-
-
             </div>
             </div>
             </div>
           </div>
 
-
   {# Sidebar #}
   {% include 'components/_sidebar.html.twig' %}
   {# {{ render(controller('App\\Controller\\TechNews\\IndexController::sidebar')) }}#}
-
-
 {% endblock %}
