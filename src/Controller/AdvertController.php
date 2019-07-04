@@ -13,7 +13,6 @@ use App\Entity\Categorie;
 use App\Entity\Document;
 use App\Entity\Contact;
 
-
 class AdvertController extends AbstractController
 {
 
@@ -27,17 +26,20 @@ class AdvertController extends AbstractController
 
     public function index ()
     {
-      $produit = $this->getDoctrine()
-            ->getRepository(Produit::class)
-            ->findAll();
+        $repository = $this->getDoctrine()
+        ->getRepository(Produit::class);
 
-        $categorie = $this->getDoctrine()
-            ->getRepository(Categorie::class)
-            ->findAll();
+        $produit = $repository->findAll();
+        $spotlight = $repository->findByLatest();
 
         return $this->render("index/index.html.twig", [
           "produits" => $produit,
-          "categorie" => $categorie,
+          'spotlight' => $spotlight,
+          /*
+               'categorie' => $article->getCategorie()->getSlug(),
+               'slug' => $article->getSlug(),
+               'id' => $article->getId()
+            */
           ]);
         }
 
@@ -52,18 +54,17 @@ class AdvertController extends AbstractController
     public function allproduct ()
     {
 
-      $produit = $this->getDoctrine()
-            ->getRepository(Produit::class)
-            ->findAll();
+        $repository = $this->getDoctrine()
+        ->getRepository(Produit::class);
 
-        $categorie = $this->getDoctrine()
-            ->getRepository(Categorie::class)
-            ->find(1);
+        $produit = $repository->findAll();
+        $spotlight = $repository->findByLatest();
 
         return $this->render("index/allproduct.html.twig", [
           "produits" => $produit,
-          "categorie" => $categorie,
-      ]);
+          'spotlight' => $spotlight,
+    ]);
+
       }
 
 /*======================================
@@ -82,7 +83,7 @@ class AdvertController extends AbstractController
             ->find(1);
 
         return $this->render("index/produit.html.twig",[
-          "produit" => $produit
+          "produit" => $produit,
       ]);
       }
 
