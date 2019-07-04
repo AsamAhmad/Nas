@@ -18,8 +18,10 @@ use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use EasyCorp\Bundle\EasyAdminBundle\Controller\EasyAdminController;
 
-class ProduitController extends AbstractController
+class ProduitController extends EasyAdminController
+
 {
     /*
 

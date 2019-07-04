@@ -2,9 +2,10 @@ easy_admin:
   entities:
     Article:
       class: App\Entity\Produit
+      controller: App\Controller\ProduitController
       label: 'Produits'
       help: 'Vous etes dans la section produit'
-      image_base_path: '/img'
+      #image_base_path: '/img'
       #Changer le titre des actions
       new:
         title:  'Ajouter un produit'
@@ -21,7 +22,12 @@ easy_admin:
         title: 'Derniers produits ajoutés'
         help: null
         #Champs affichés en listant les articles
-        fields: ['name', { property: 'image1', label: 'Image', type: 'image'}, 'promotion', 'spotlight', 'special']
+        fields: ['name', {property: 'image1', type: 'image', base_path: '%app.path.product_images%', label: 'Image principale'}, 'spotlight', 'special']
+
+      show:
+        fields:
+          - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
+
 
         #Personnalisation des boutons
         actions:
@@ -37,10 +43,14 @@ easy_admin:
           - {property: 'slug'}
           - {property: 'specification'}
           - {property: 'reference'}
-          - {property: 'image1'}
-          - {property: 'promotion'}
+          - {property: 'imageFile1', type: 'vich_image', label: 'Image principale' , type_options: { required: true , help: 'Ce champs est obligatoire, veuillez ajouter une image'} }
+          - {property: 'imageFile2', type: 'vich_image', label: 'Image 2'}
+          - {property: 'imageFile3', type: 'vich_image', label: 'Image 3'}
+          - {property: 'imageFile4', type: 'vich_image', label: 'Image 4'}
+          - {property: 'imageFile5', type: 'vich_image', label: 'Image 5'}
+          - {property: 'imageFile6', type: 'vich_image', label: 'Image 6'}
+          - {property: 'imageFile7', type: 'vich_image', label: 'Image 7'}
           - {property: 'spotlight'}
-          - {property: 'promotion'}
           - {property: 'categorie'}
           - {property: 'protocol'}
           - {property: 'date', type: 'datetime'}
